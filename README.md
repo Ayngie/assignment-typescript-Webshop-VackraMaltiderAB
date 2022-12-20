@@ -79,10 +79,10 @@ Sebastian
   d.Starta sprinten & börja arbeta utifrån er plan (viktigt att ni hela tiden
     uppdaterar i jira hur ni arbetar)
   
-  ##### 3.Varje sprint avslutas
-    a.Med en demo
-    b.Retrospective
-    c.Även den sista sprinten ska avslutas med en retro. Då gör ni en retro för hela
+ ##### 3.Varje sprint avslutas
+  a.Med en demo
+  b.Retrospective
+  c.Även den sista sprinten ska avslutas med en retro. Då gör ni en retro för hela
     projektet och samarbetet.
     
   **Datum** **Demo**
