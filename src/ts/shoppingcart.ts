@@ -71,7 +71,7 @@ const createHtml = (productsInCart: Product[]) => {
     img.src = productsInCart[i].imgUrl;
     img.alt = productsInCart[i].title;
     img.classList.add("product-image"); //klass för senare styling
-    price.innerHTML = productsInCart[i].price;
+    price.innerHTML = productsInCart[i].price + " kr";
     price.classList.add("product-price"); //klass för senare styling
     // category.innerHTML = productsInCart[i].category;
     // category.classList.add("product-category"); //klass för senare styling
@@ -79,7 +79,7 @@ const createHtml = (productsInCart: Product[]) => {
     // color.classList.add("product-color"); //klass för senare styling
     quantity.innerHTML = "0";
     quantity.classList.add("product-quantity"); //klass för senare styling
-    productLinePrice.innerHTML = "0";
+    productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
     productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
     //lägga till i html

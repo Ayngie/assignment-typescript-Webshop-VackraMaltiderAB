@@ -21,6 +21,10 @@ body{
   gap: 1em;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+
+  padding-bottom: 1%;
+  border-bottom: 1px solid grey;
+  margin-bottom: 2%;
 }
 
 //Product rows
