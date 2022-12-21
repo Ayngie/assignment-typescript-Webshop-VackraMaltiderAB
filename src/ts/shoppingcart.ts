@@ -24,18 +24,19 @@ const createHtml = (productsInCart: Product[]) => {
   let quantityLabel = document.createElement("label");
   let subTotalLabel = document.createElement("label");
 
+  labelsContainer.classList.add("labels");
   titleLabel.innerHTML = "Produktnamn";
-  titleLabel.classList.add("titleLabel");
+  titleLabel.classList.add("product-title");
   descriptionLabel.innerHTML = "Beskrivning";
-  descriptionLabel.classList.add("descriptionLabel");
+  descriptionLabel.classList.add("product-description");
   imageLabel.innerHTML = "Bild";
-  imageLabel.classList.add("imageLabel");
+  imageLabel.classList.add("product-img");
   priceLabel.innerHTML = "Pris";
-  priceLabel.classList.add("priceLabel");
+  priceLabel.classList.add("product-price");
   quantityLabel.innerHTML = "Antal";
-  quantityLabel.classList.add("quantityLabel");
+  quantityLabel.classList.add("product-quantity");
   subTotalLabel.innerHTML = "Delsumma";
-  subTotalLabel.classList.add("subTotalLabel");
+  subTotalLabel.classList.add("product-line-price");
 
   labelsContainer.appendChild(titleLabel);
   labelsContainer.appendChild(descriptionLabel);
@@ -57,18 +58,20 @@ const createHtml = (productsInCart: Product[]) => {
     let color = document.createElement("p");
 
     //ge variablerna värde/innehåll
-    productItem.classList.add("productItem"); //klass för senare styling
+    productItem.classList.add("product-item"); //klass för senare styling
     title.innerHTML = productsInCart[i].title;
-    title.classList.add("productTitle"); //klass för senare styling
+    title.classList.add("product-title"); //klass för senare styling
     description.innerHTML = productsInCart[i].description;
-    description.classList.add("productDescription"); //klass för senare styling
+    description.classList.add("product-description"); //klass för senare styling
     img.src = productsInCart[i].imgUrl;
     img.alt = productsInCart[i].title;
-    img.classList.add("productImg"); //klass för senare styling
+    img.classList.add("product-img"); //klass för senare styling
     price.innerHTML = productsInCart[i].price;
-    price.classList.add("productPrice"); //klass för senare styling
+    price.classList.add("product-price"); //klass för senare styling
     category.innerHTML = productsInCart[i].category;
+    category.classList.add("product-category"); //klass för senare styling
     color.innerHTML = productsInCart[i].color;
+    color.classList.add("product-color"); //klass för senare styling
 
     productItem.appendChild(title);
     productItem.appendChild(description);
