@@ -1,5 +1,7 @@
 import { Product } from "./models/Product";
 
+let shoppingCart: Product[] = [];
+
 let products: Product[] = [
   new Product(
     "Stor tallrik Sand",
@@ -91,7 +93,7 @@ function createHtml() {
     let addToCartBtn = document.createElement("button");
     addToCartBtn.innerHTML = "Lägg i varukorgen";
     addToCartBtn.addEventListener("click", () => {
-      addToCart();
+      addToCart(products[i]);
     });
 
     productContainer?.appendChild(product);
@@ -105,6 +107,14 @@ function createHtml() {
   }
 }
 
-function addToCart() {}
+function addToCart(product: Product) {
+  alert("Du klickade");
+  let productToCart = product;
+  shoppingCart.push(productToCart);
+
+  let savedCart = JSON.stringify(shoppingCart);
+
+  localStorage.setItem("varukorg", savedCart);
+}
 
 createHtml();
