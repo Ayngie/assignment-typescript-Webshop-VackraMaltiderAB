@@ -1,9 +1,30 @@
-body{ 
-  margin: 0; 
+body {
+  margin: 0;
+
+  .product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
 }
 
-
-//Footer 
+//Footer
 .footer-container {
   text-align: center;
   position: absolute;
