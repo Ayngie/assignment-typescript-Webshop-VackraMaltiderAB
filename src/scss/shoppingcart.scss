@@ -1,3 +1,5 @@
+/*-------------------------------------- Mobile first ------------------------------------*/
+
 body{ 
   margin: 0; 
 }
@@ -16,6 +18,7 @@ body{
   // justify-content: space-between;
 
   display: grid;
+  gap: 1em;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 }
@@ -31,13 +34,26 @@ body{
   // grid-row: 1;
 
   display: grid;
+  gap: 1em;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+//Product title
+.product-title {
+  font-size: 1em;
+}
+
+//Product description
+.product-description {
+  visibility: hidden;
 }
 
 //Product image
 .product-image {
-  width: 25%;
+  width: 30%;
 }
 
 //Footer 
@@ -48,4 +64,28 @@ body{
   width: 100%;
   height: 30px;
   background-color: pink;
+}
+
+/*-------------------------------------- Desktop ------------------------------------*/
+@media screen and (min-width: 1000px) {
+
+  //Product title
+  .product-title {
+    font-size: 1.2em;
+  }
+
+  //Product description
+  .product-description {
+    visibility: visible;
+
+    font-size: 0.9em;
+  }
+  .product-description-label {
+    font-size: 1rem;
+  }
+
+  //Product image
+.product-image {
+  width: 60%;
+}
 }

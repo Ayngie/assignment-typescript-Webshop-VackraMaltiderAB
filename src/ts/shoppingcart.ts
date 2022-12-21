@@ -29,6 +29,7 @@ const createHtml = (productsInCart: Product[]) => {
   titleLabel.classList.add("product-title");
   descriptionLabel.innerHTML = "Beskrivning";
   descriptionLabel.classList.add("product-description");
+  descriptionLabel.classList.add("product-description-label");
   imageLabel.innerHTML = "Bild";
   imageLabel.classList.add("product-image");
   priceLabel.innerHTML = "Pris";
@@ -50,15 +51,19 @@ const createHtml = (productsInCart: Product[]) => {
   for (let i = 0; i < productsInCart.length; i++) {
     //skapa upp variabler för objektet
     let productItem = document.createElement("div");
+
     let title = document.createElement("h3");
     let description = document.createElement("p");
     let img = document.createElement("img");
     let price = document.createElement("p");
-    let category = document.createElement("p");
-    let color = document.createElement("p");
+    // let category = document.createElement("p");
+    // let color = document.createElement("p");
+    let quantity = document.createElement("p");
+    let productLinePrice = document.createElement("p");
 
     //ge variablerna värde/innehåll
     productItem.classList.add("product-item"); //klass för senare styling
+
     title.innerHTML = productsInCart[i].title;
     title.classList.add("product-title"); //klass för senare styling
     description.innerHTML = productsInCart[i].description;
@@ -68,17 +73,24 @@ const createHtml = (productsInCart: Product[]) => {
     img.classList.add("product-image"); //klass för senare styling
     price.innerHTML = productsInCart[i].price;
     price.classList.add("product-price"); //klass för senare styling
-    category.innerHTML = productsInCart[i].category;
-    category.classList.add("product-category"); //klass för senare styling
-    color.innerHTML = productsInCart[i].color;
-    color.classList.add("product-color"); //klass för senare styling
+    // category.innerHTML = productsInCart[i].category;
+    // category.classList.add("product-category"); //klass för senare styling
+    // color.innerHTML = productsInCart[i].color;
+    // color.classList.add("product-color"); //klass för senare styling
+    quantity.innerHTML = "0";
+    quantity.classList.add("product-quantity"); //klass för senare styling
+    productLinePrice.innerHTML = "0";
+    productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
+    //lägga till i html
     productItem.appendChild(title);
     productItem.appendChild(description);
     productItem.appendChild(img);
     productItem.appendChild(price);
-    productItem.appendChild(category);
-    productItem.appendChild(color);
+    // productItem.appendChild(category);
+    // productItem.appendChild(color);
+    productItem.appendChild(quantity);
+    productItem.appendChild(productLinePrice);
 
     container.appendChild(productItem);
   }
