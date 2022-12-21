@@ -16,6 +16,35 @@ const createHtml = (productsInCart: Product[]) => {
   ) as HTMLDivElement; //hämta container för varukorgens produkter att läggas in i.
 
   container.innerHTML = ""; //rensa innehåll
+  let labelsContainer = document.createElement("div");
+  let titleLabel = document.createElement("label");
+  let descriptionLabel = document.createElement("label");
+  let imageLabel = document.createElement("label");
+  let priceLabel = document.createElement("label");
+  let quantityLabel = document.createElement("label");
+  let subTotalLabel = document.createElement("label");
+
+  titleLabel.innerHTML = "Produktnamn";
+  titleLabel.classList.add("titleLabel");
+  descriptionLabel.innerHTML = "Beskrivning";
+  descriptionLabel.classList.add("descriptionLabel");
+  imageLabel.innerHTML = "Bild";
+  imageLabel.classList.add("imageLabel");
+  priceLabel.innerHTML = "Pris";
+  priceLabel.classList.add("priceLabel");
+  quantityLabel.innerHTML = "Antal";
+  quantityLabel.classList.add("quantityLabel");
+  subTotalLabel.innerHTML = "Delsumma";
+  subTotalLabel.classList.add("subTotalLabel");
+
+  labelsContainer.appendChild(titleLabel);
+  labelsContainer.appendChild(descriptionLabel);
+  labelsContainer.appendChild(imageLabel);
+  labelsContainer.appendChild(priceLabel);
+  labelsContainer.appendChild(quantityLabel);
+  labelsContainer.appendChild(subTotalLabel);
+
+  container.appendChild(labelsContainer);
 
   for (let i = 0; i < productsInCart.length; i++) {
     //skapa upp variabler för objektet
