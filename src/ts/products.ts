@@ -1,6 +1,8 @@
 import { Product } from "./models/Product";
 
-let shoppingCart: Product[] = [];
+let shoppingCart: Product[] = JSON.parse(
+  localStorage.getItem("varukorg") || "[]"
+);
 
 let products: Product[] = [
   new Product(
