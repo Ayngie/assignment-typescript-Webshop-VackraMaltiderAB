@@ -6,7 +6,7 @@ window.onload = function () {
 
 //hämta kundens lista av produkter från localstorage.
 let productsInCart: Product[] = JSON.parse(
-  localStorage.getItem("products") || "[]"
+  localStorage.getItem("varukorg") || "[]"
 );
 
 //funktion för att visa upp varukorgen i html
@@ -30,10 +30,14 @@ const createHtml = (productsInCart: Product[]) => {
     //ge variablerna värde/innehåll
     productItem.classList.add("productItem"); //klass för senare styling
     title.innerHTML = productsInCart[i].title;
+    title.classList.add("productTitle"); //klass för senare styling
     description.innerHTML = productsInCart[i].description;
+    description.classList.add("productDescription"); //klass för senare styling
     img.src = productsInCart[i].imgUrl;
     img.alt = productsInCart[i].title;
+    img.classList.add("productImg"); //klass för senare styling
     price.innerHTML = productsInCart[i].price;
+    price.classList.add("productPrice"); //klass för senare styling
     category.innerHTML = productsInCart[i].category;
     color.innerHTML = productsInCart[i].color;
 
@@ -46,4 +50,5 @@ const createHtml = (productsInCart: Product[]) => {
 
     container.appendChild(productItem);
   }
+  console.log(productsInCart);
 };
