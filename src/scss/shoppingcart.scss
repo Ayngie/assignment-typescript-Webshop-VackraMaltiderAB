@@ -2,12 +2,16 @@ body{
   margin: 0; 
 }
 
+//Product image
+.productImg {
+  image-rendering: auto;
+}
 
 //Footer 
 .footer-container {
   text-align: center;
   position: absolute;
-  bottom: 20;
+  margin-top: 20px;
   width: 100%;
   height: 30px;
   background-color: pink;
