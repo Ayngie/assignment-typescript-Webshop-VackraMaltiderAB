@@ -91,6 +91,7 @@ function createHtml() {
     price.innerHTML = products[i].price + " kr";
 
     let addToCartBtn = document.createElement("button");
+    addToCartBtn.classList.add("add-to-cart-btn");
     addToCartBtn.innerHTML = "Lägg i varukorgen";
     addToCartBtn.addEventListener("click", () => {
       addToCart(products[i]);
@@ -108,7 +109,6 @@ function createHtml() {
 }
 
 function addToCart(product: Product) {
-  alert("Du klickade");
   let productToCart = product;
   shoppingCart.push(productToCart);
 

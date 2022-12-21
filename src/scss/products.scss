@@ -31,6 +31,12 @@ body {
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+
+      .add-to-cart-btn {
+        &:hover {
+          background-color: lightgray;
+        }
+      }
     }
   }
 }
