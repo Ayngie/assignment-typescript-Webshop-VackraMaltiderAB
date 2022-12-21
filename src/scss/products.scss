@@ -4,14 +4,17 @@ body {
   .product-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
     .product {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 30%;
+      margin-top: 20px;
     }
 
     .detail-container {
@@ -19,7 +22,15 @@ body {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 20px;
+    }
+
+    .price-btn-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
   }
 }
@@ -28,7 +39,7 @@ body {
 .footer-container {
   text-align: center;
   position: absolute;
-  bottom: 20;
+  margin-top: 20px;
   width: 100%;
   height: 30px;
   background-color: pink;

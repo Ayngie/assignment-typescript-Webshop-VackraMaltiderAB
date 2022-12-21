@@ -2,12 +2,52 @@ import { Product } from "./models/Product";
 
 let products: Product[] = [
   new Product(
-    "Stor tallrik sand",
+    "Stor tallrik Sand",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-    "src/assets/images/StorTallrikSand.png",
+    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
     "345",
     "Tallrikar",
     "Sand"
+  ),
+  new Product(
+    "Liten tallrik Cinnamon",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
+    "275",
+    "Tallrikar",
+    "Cinnamon"
+  ),
+  new Product(
+    "Liten tallrik Sand",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
+    "275",
+    "Tallrikar",
+    "Sand"
+  ),
+  new Product(
+    "Liten tallrik Viol",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
+    "275",
+    "Tallrikar",
+    "Viol"
+  ),
+  new Product(
+    "Stor tallrik Cinnamon",
+    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
+    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
+    "345",
+    "Tallrikar",
+    "Cinnamon"
+  ),
+  new Product(
+    "Stor tallrik Viol",
+    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
+    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
+    "345",
+    "Tallrikar",
+    "Viol"
   ),
 ];
 
@@ -24,6 +64,7 @@ function createHtml() {
 
     let image = document.createElement("img");
     image.src = products[i].imgUrl;
+    image.width = 200;
 
     let description = document.createElement("p");
     description.innerHTML = products[i].description;
@@ -41,6 +82,9 @@ function createHtml() {
     detailContainer.appendChild(category);
     detailContainer.appendChild(color);
 
+    let priceBtnContainer = document.createElement("div");
+    priceBtnContainer.classList.add("price-btn-container");
+
     let price = document.createElement("h5");
     price.innerHTML = products[i].price + " kr";
 
@@ -51,11 +95,13 @@ function createHtml() {
     });
 
     productContainer?.appendChild(product);
-    product?.appendChild(title);
-    product?.appendChild(image);
-    product?.appendChild(description);
-    product?.appendChild(detailContainer);
-    product?.appendChild(price);
+    product.appendChild(title);
+    product.appendChild(image);
+    product.appendChild(description);
+    product.appendChild(detailContainer);
+    product.appendChild(priceBtnContainer);
+    priceBtnContainer?.appendChild(price);
+    priceBtnContainer.appendChild(addToCartBtn);
   }
 }
 
