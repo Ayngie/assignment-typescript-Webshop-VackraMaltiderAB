@@ -30,7 +30,7 @@ const createHtml = (productsInCart: Product[]) => {
   descriptionLabel.innerHTML = "Beskrivning";
   descriptionLabel.classList.add("product-description");
   imageLabel.innerHTML = "Bild";
-  imageLabel.classList.add("product-img");
+  imageLabel.classList.add("product-image");
   priceLabel.innerHTML = "Pris";
   priceLabel.classList.add("product-price");
   quantityLabel.innerHTML = "Antal";
@@ -65,7 +65,7 @@ const createHtml = (productsInCart: Product[]) => {
     description.classList.add("product-description"); //klass för senare styling
     img.src = productsInCart[i].imgUrl;
     img.alt = productsInCart[i].title;
-    img.classList.add("product-img"); //klass för senare styling
+    img.classList.add("product-image"); //klass för senare styling
     price.innerHTML = productsInCart[i].price;
     price.classList.add("product-price"); //klass för senare styling
     category.innerHTML = productsInCart[i].category;
