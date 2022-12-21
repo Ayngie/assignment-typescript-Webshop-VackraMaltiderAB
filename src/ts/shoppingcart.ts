@@ -50,5 +50,12 @@ const createHtml = (productsInCart: Product[]) => {
 
     container.appendChild(productItem);
   }
-  console.log(productsInCart);
 };
+
+function calculateTotal() {
+  let total = 0;
+  for (let i = 0; i < productsInCart.length; i++) {
+    total += Number(productsInCart[i].price);
+  }
+  return total;
+}
