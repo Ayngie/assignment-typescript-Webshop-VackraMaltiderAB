@@ -6,52 +6,64 @@ let shoppingCart: Product[] = JSON.parse(
 
 let products: Product[] = [
   new Product(
+    1,
     "Stor tallrik Sand",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
     "345",
     "Tallrikar",
-    "Sand"
+    "Sand",
+    0
   ),
   new Product(
+    2,
     "Liten tallrik Cinnamon",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
     "275",
     "Tallrikar",
-    "Cinnamon"
+    "Cinnamon",
+    0
   ),
   new Product(
+    3,
     "Liten tallrik Sand",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
     "275",
     "Tallrikar",
-    "Sand"
+    "Sand",
+    0
   ),
   new Product(
+    4,
     "Liten tallrik Viol",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
     "275",
     "Tallrikar",
-    "Viol"
+    "Viol",
+    0
   ),
   new Product(
+    5,
     "Stor tallrik Cinnamon",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
     "345",
     "Tallrikar",
-    "Cinnamon"
+    "Cinnamon",
+    0
   ),
   new Product(
+    6,
     "Stor tallrik Viol",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
     "345",
     "Tallrikar",
-    "Viol"
+    "Viol",
+    0
   ),
 ];
 
@@ -111,12 +123,24 @@ function createHtml() {
 }
 
 function addToCart(product: Product) {
-  let productToCart = product;
-  shoppingCart.push(productToCart);
+  if (product.quantity > 0) {
+    let index = shoppingCart.indexOf(product);
+    shoppingCart.splice(index, 1);
+    product.quantity++;
+    shoppingCart.push(product);
 
-  let savedCart = JSON.stringify(shoppingCart);
+    let savedCart = JSON.stringify(shoppingCart);
 
-  localStorage.setItem("varukorg", savedCart);
+    localStorage.setItem("varukorg", savedCart);
+  } else {
+    product.quantity++;
+    let productToCart = product;
+    shoppingCart.push(productToCart);
+
+    let savedCart = JSON.stringify(shoppingCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
 }
 
 createHtml();
