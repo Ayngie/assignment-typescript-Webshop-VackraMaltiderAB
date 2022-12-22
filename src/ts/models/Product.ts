@@ -4,9 +4,13 @@ export class Product {
     public title: string,
     public description: string,
     public imgUrl: string,
-    public price: string,
+    public price: number,
     public category: string,
     public color: string,
-    public quantity: number
+    public quantity: number,
+    public subtotal: number
   ) {}
+  calculateSubtotal() {
+    this.subtotal = this.price * this.quantity;
+  }
 }

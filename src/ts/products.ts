@@ -10,9 +10,10 @@ let products: Product[] = [
     "Stor tallrik Sand",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
-    "345",
+    345,
     "Tallrikar",
     "Sand",
+    0,
     0
   ),
   new Product(
@@ -20,9 +21,10 @@ let products: Product[] = [
     "Liten tallrik Cinnamon",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
-    "275",
+    275,
     "Tallrikar",
     "Cinnamon",
+    0,
     0
   ),
   new Product(
@@ -30,9 +32,10 @@ let products: Product[] = [
     "Liten tallrik Sand",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
-    "275",
+    275,
     "Tallrikar",
     "Sand",
+    0,
     0
   ),
   new Product(
@@ -40,9 +43,10 @@ let products: Product[] = [
     "Liten tallrik Viol",
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
-    "275",
+    275,
     "Tallrikar",
     "Viol",
+    0,
     0
   ),
   new Product(
@@ -50,9 +54,10 @@ let products: Product[] = [
     "Stor tallrik Cinnamon",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
-    "345",
+    345,
     "Tallrikar",
     "Cinnamon",
+    0,
     0
   ),
   new Product(
@@ -60,9 +65,10 @@ let products: Product[] = [
     "Stor tallrik Viol",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
-    "345",
+    345,
     "Tallrikar",
     "Viol",
+    0,
     0
   ),
 ];
@@ -80,6 +86,7 @@ function createHtml() {
 
     let image = document.createElement("img");
     image.src = products[i].imgUrl;
+    image.alt = products[i].title;
     image.width = 200;
 
     let description = document.createElement("p");
