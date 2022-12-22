@@ -8,6 +8,7 @@ window.onload = function () {
 let productsInCart: Product[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
 );
+
 //funktion för att visa upp varukorgen i html
 const createHtml = (productsInCart: Product[]) => {
   let container: HTMLDivElement = document.getElementById(
