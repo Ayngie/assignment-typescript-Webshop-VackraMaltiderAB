@@ -114,6 +114,7 @@ function createHtml() {
 
     let addToCartBtn = document.createElement("button");
     addToCartBtn.classList.add("add-to-cart-btn");
+    // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
     addToCartBtn.innerHTML = "Lägg i varukorgen";
     addToCartBtn.addEventListener("click", () => {
       addToCart(products[i]);
