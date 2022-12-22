@@ -16,7 +16,10 @@ const createHtml = (productsInCart: Product[]) => {
   ) as HTMLDivElement; //hämta container för varukorgens produkter att läggas in i.
 
   container.innerHTML = ""; //rensa innehåll
+
+  //labels
   let labelsContainer = document.createElement("div");
+
   let titleLabel = document.createElement("label");
   let descriptionLabel = document.createElement("label");
   let imageLabel = document.createElement("label");
@@ -25,19 +28,21 @@ const createHtml = (productsInCart: Product[]) => {
   let subTotalLabel = document.createElement("label");
 
   labelsContainer.classList.add("labels");
-  titleLabel.innerHTML = "Produktnamn";
+
   titleLabel.classList.add("product-title");
-  descriptionLabel.innerHTML = "Beskrivning";
   descriptionLabel.classList.add("product-description");
   descriptionLabel.classList.add("product-description-label");
-  imageLabel.innerHTML = "Bild";
   imageLabel.classList.add("product-image");
-  priceLabel.innerHTML = "Pris";
   priceLabel.classList.add("product-price");
-  quantityLabel.innerHTML = "Antal";
   quantityLabel.classList.add("product-quantity");
-  subTotalLabel.innerHTML = "Delsumma";
   subTotalLabel.classList.add("product-line-price");
+
+  titleLabel.innerHTML = "Produktnamn";
+  descriptionLabel.innerHTML = "Beskrivning";
+  imageLabel.innerHTML = "Bild";
+  priceLabel.innerHTML = "Pris";
+  quantityLabel.innerHTML = "Antal";
+  subTotalLabel.innerHTML = "Delsumma";
 
   labelsContainer.appendChild(titleLabel);
   labelsContainer.appendChild(descriptionLabel);
