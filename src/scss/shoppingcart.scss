@@ -28,7 +28,7 @@ body{
 
     //Product description
     .product-description-label {
-      // display: none; //funkar inte
+      display: none; 
     }
 
   //Product rows
@@ -47,7 +47,7 @@ body{
 
     //Product description
     .product-description {
-      // display: none; //funkar inte
+      display: none; 
     }
 
     //Product image
@@ -79,11 +79,11 @@ body{
 
   //Product description
   .product-description {
-    display: inline; //varför syns inte?
+    display: block; //OBS! VARFÖR syns inte? !
     font-size: 0.9em;
   }
   .product-description-label {
-    display: inline; //varför syns inte?
+    display: block; //OBS! VARFÖR syns inte? !
     font-size: 1rem;
   }
 
