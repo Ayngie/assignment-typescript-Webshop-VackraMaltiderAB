@@ -1,6 +1,11 @@
 body {
   margin: 0;
-
+  
+  #h1 {
+    display: flex;
+    justify-content: center;
+  }
+  
   .product-container {
     display: flex;
     flex-direction: row;
@@ -43,7 +48,10 @@ body {
 
 //Footer
 .footer-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
   position: absolute;
   margin-top: 20px;
   width: 100%;

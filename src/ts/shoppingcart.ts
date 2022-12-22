@@ -12,7 +12,7 @@ let productsInCart: Product[] = JSON.parse(
 //funktion för att visa upp varukorgen i html
 const createHtml = (productsInCart: Product[]) => {
   let container: HTMLDivElement = document.getElementById(
-    "varukorg-container"
+    "min-varukorg"
   ) as HTMLDivElement; //hämta container för varukorgens produkter att läggas in i.
 
   container.innerHTML = ""; //rensa innehåll

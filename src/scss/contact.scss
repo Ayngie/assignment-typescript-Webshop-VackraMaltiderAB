@@ -1,13 +1,44 @@
 body{ 
   margin: 0; 
 }
+//header and contact text
+//header and welcome text
+
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+
+  #contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;  
+    border: 1px solid rgb(209, 209, 209);
+    padding: 1%;
+    
+    #contact-text {
+    width: 80%;
+    }
+
+    #contact-nr {
+      font-weight: bold;
+    }
+  }
+}
 
 
 //Footer 
 .footer-container {
-  text-align: center;
-  position: absolute;
-  bottom: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: 30px;
   background-color: pink;
