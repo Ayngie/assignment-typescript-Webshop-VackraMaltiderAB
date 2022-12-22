@@ -52,7 +52,7 @@ body{
 
 //Product description
 .product-description {
-  visibility: hidden;
+  display: none;
 }
 
 //Product image
@@ -80,7 +80,7 @@ body{
 
   //Product description
   .product-description {
-    visibility: visible;
+    display: block;
 
     font-size: 0.9em;
   }
