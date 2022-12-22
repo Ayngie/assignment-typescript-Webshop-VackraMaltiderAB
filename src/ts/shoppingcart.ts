@@ -61,9 +61,9 @@ const createHtml = (productsInCart: Product[]) => {
     let img = document.createElement("img");
     let price = document.createElement("p");
     let quantityContainer = document.createElement("div");
-    let addOne = document.createElement("p");
+    let addOne = document.createElement("button");
     let quantity = document.createElement("p");
-    let subtractOne = document.createElement("p");
+    let subtractOne = document.createElement("button");
     let productLinePrice = document.createElement("p");
 
     productItem.classList.add("product-item");
@@ -89,6 +89,20 @@ const createHtml = (productsInCart: Product[]) => {
     subtractOne.innerHTML = "-";
     //productsInCart[i].calculateSubtotal();
     productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+
+    addOne.addEventListener("click", () => {
+      console.log("You clicked on add one.");
+      alert("You clicked on add one.");
+      // FUNKTION för att öka
+      // increaseQuantityByOne();
+    });
+
+    subtractOne.addEventListener("click", () => {
+      console.log("You clicked on subtract one. ");
+      alert("You clicked on subtract one.");
+      // FUNKTION för att minska
+      // decreaseQuantityByOne();
+    });
 
     productItem.appendChild(title);
     productItem.appendChild(description);

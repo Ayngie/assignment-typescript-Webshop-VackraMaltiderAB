@@ -63,11 +63,19 @@ body{
       gap: 10%;      
       align-items: center;
 
+      .clickable {
+        border: none;
+        border-radius: 50px;
+        transition-duration: 0.4s;
+      }
       .clickable:hover {
         background-color: lightgrey;
-        border-radius: 15px;
         cursor: pointer;
       }
+
+      // .product-quantity {
+      //   vertical-align: middle;      
+      // }
     }
   }
 
