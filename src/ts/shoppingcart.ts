@@ -60,7 +60,10 @@ const createHtml = (productsInCart: Product[]) => {
     let description = document.createElement("p");
     let img = document.createElement("img");
     let price = document.createElement("p");
+    let quantityContainer = document.createElement("div");
+    let addOne = document.createElement("p");
     let quantity = document.createElement("p");
+    let subtractOne = document.createElement("p");
     let productLinePrice = document.createElement("p");
 
     productItem.classList.add("product-item");
@@ -68,7 +71,12 @@ const createHtml = (productsInCart: Product[]) => {
     description.classList.add("product-description");
     img.classList.add("product-image");
     price.classList.add("product-price"); //klass för senare styling
+    quantityContainer.classList.add("quantity-container"); //klass för senare styling
     quantity.classList.add("product-quantity"); //klass för senare styling
+    addOne.classList.add("add-one"); //klass för senare styling
+    addOne.classList.add("clickable"); //klass för senare styling
+    subtractOne.classList.add("subtract-one"); //klass för senare styling
+    subtractOne.classList.add("clickable"); //klass för senare styling
     productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
     title.innerHTML = productsInCart[i].title;
@@ -77,6 +85,8 @@ const createHtml = (productsInCart: Product[]) => {
     img.alt = productsInCart[i].title;
     price.innerHTML = productsInCart[i].price + " kr";
     quantity.innerHTML = productsInCart[i].quantity.toString();
+    addOne.innerHTML = "+";
+    subtractOne.innerHTML = "-";
     //productsInCart[i].calculateSubtotal();
     productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
 
@@ -84,7 +94,12 @@ const createHtml = (productsInCart: Product[]) => {
     productItem.appendChild(description);
     productItem.appendChild(img);
     productItem.appendChild(price);
-    productItem.appendChild(quantity);
+
+    quantityContainer.appendChild(subtractOne);
+    quantityContainer.appendChild(quantity);
+    quantityContainer.appendChild(addOne);
+    productItem.appendChild(quantityContainer);
+
     productItem.appendChild(productLinePrice);
 
     container.appendChild(productItem);

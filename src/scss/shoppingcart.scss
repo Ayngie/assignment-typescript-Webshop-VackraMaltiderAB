@@ -23,7 +23,6 @@ body{
 
     padding-bottom: 1%;
     border-bottom: 1px solid grey;
-    margin-bottom: 2%;
   }
 
     //Product description
@@ -35,9 +34,12 @@ body{
   .product-item {
     margin: 1%;
     display: grid;
+    align-items: center;
+    justify-content: center;
     gap: 1em;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    padding: 1%;
     border-bottom: 1px solid rgb(206, 206, 206);
 
     //Product title
@@ -53,6 +55,19 @@ body{
     //Product image
     .product-image {
       width: 30%;
+    }
+
+    .quantity-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10%;      
+      align-items: center;
+
+      .clickable:hover {
+        background-color: lightgrey;
+        border-radius: 15px;
+        cursor: pointer;
+      }
     }
   }
 
