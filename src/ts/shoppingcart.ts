@@ -28,14 +28,13 @@ const createHtml = (productsInCart: Product[]) => {
   let subTotalLabel = document.createElement("label");
 
   labelsContainer.classList.add("labels");
-
   titleLabel.classList.add("product-title");
   descriptionLabel.classList.add("product-description");
   descriptionLabel.classList.add("product-description-label");
   imageLabel.classList.add("product-image");
-  priceLabel.classList.add("product-price");
-  quantityLabel.classList.add("product-quantity");
-  subTotalLabel.classList.add("product-line-price");
+  priceLabel.classList.add("product-price"); //klass för senare styling
+  quantityLabel.classList.add("product-quantity"); //klass för senare styling
+  subTotalLabel.classList.add("product-line-price"); //klass för senare styling
 
   titleLabel.innerHTML = "Produktnamn";
   descriptionLabel.innerHTML = "Beskrivning";
@@ -54,48 +53,37 @@ const createHtml = (productsInCart: Product[]) => {
   container.appendChild(labelsContainer);
 
   for (let i = 0; i < productsInCart.length; i++) {
-    //skapa upp variabler för objektet
+    //skapa upp objekt i varukorg
     let productItem = document.createElement("div");
 
     let title = document.createElement("h3");
     let description = document.createElement("p");
     let img = document.createElement("img");
     let price = document.createElement("p");
-    // let category = document.createElement("p");
-    // let color = document.createElement("p");
     let quantity = document.createElement("p");
     let productLinePrice = document.createElement("p");
 
-    //ge variablerna värde/innehåll
-    productItem.classList.add("product-item"); //klass för senare styling
-
-    title.innerHTML = productsInCart[i].title;
-    title.classList.add("product-title"); //klass för senare styling
-    description.innerHTML = productsInCart[i].description;
-    description.classList.add("product-description"); //klass för senare styling
-    img.src = productsInCart[i].imgUrl;
-    img.alt = productsInCart[i].title;
-    img.classList.add("product-image"); //klass för senare styling
-    price.innerHTML = productsInCart[i].price + " kr";
+    productItem.classList.add("product-item");
+    title.classList.add("product-title");
+    description.classList.add("product-description");
+    img.classList.add("product-image");
     price.classList.add("product-price"); //klass för senare styling
-    // category.innerHTML = productsInCart[i].category;
-    // category.classList.add("product-category"); //klass för senare styling
-    // color.innerHTML = productsInCart[i].color;
-    // color.classList.add("product-color"); //klass för senare styling
-    quantity.innerHTML = productsInCart[i].quantity.toString();
     quantity.classList.add("product-quantity"); //klass för senare styling
-
-    //productsInCart[i].calculateSubtotal();
-    productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
     productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
-    //lägga till i html
+    title.innerHTML = productsInCart[i].title;
+    description.innerHTML = productsInCart[i].description;
+    img.src = productsInCart[i].imgUrl;
+    img.alt = productsInCart[i].title;
+    price.innerHTML = productsInCart[i].price + " kr";
+    quantity.innerHTML = productsInCart[i].quantity.toString();
+    //productsInCart[i].calculateSubtotal();
+    productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+
     productItem.appendChild(title);
     productItem.appendChild(description);
     productItem.appendChild(img);
     productItem.appendChild(price);
-    // productItem.appendChild(category);
-    // productItem.appendChild(color);
     productItem.appendChild(quantity);
     productItem.appendChild(productLinePrice);
 
