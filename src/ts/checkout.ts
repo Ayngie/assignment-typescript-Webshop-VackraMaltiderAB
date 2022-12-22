@@ -52,5 +52,5 @@ const createHtml = (productsInCart: Product[]) => {
 
   container.appendChild(labelsContainer);
 
-  //for-loop här:
+  //for-loop här (kopieras från varukorgssidan när den är klar)
 };

@@ -22,10 +22,31 @@ body{
     
     #contact-text {
     width: 80%;
+    font-size: larger;
+    
     }
 
     #contact-nr, #contact-email {
       font-weight: bold;
+      font-size: large;
+    }
+
+    .links {
+      color: rgb(7, 117, 7);
+      padding-left: 7px;
+      padding-right: 7px;
+      background-color: rgb(235, 245, 233);
+      border-radius: 15px;
+      margin-left: 3px;
+      margin-right: 3px;
+  
+      &:hover {
+        cursor: pointer;
+        color: rgb(128, 218, 128);
+      }
+      &:link {
+        text-decoration: none;
+      }
     }
   }
 }

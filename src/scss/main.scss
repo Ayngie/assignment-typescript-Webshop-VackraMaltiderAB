@@ -18,6 +18,37 @@ body {
     }
   }
 
+  #produkter {  
+    color: green;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: rgb(240, 255, 236);
+    border-radius: 15px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(1, 210, 1);
+    }
+    &:link {
+      text-decoration: none;
+    }
+
+    animation: blink-animation 1s steps (5, start) ease;
+    -webkit-animation: blink-animation 2.2s steps(5, start) infinite;
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+  } 
+
   //Footer
   .footer-container {
     display: flex;
@@ -29,7 +60,7 @@ body {
 
     position: absolute;
     width: 100%;
-    background-color: pink;
+    background-color: rgb(96, 144, 96);
 
 
     .footer-text {
