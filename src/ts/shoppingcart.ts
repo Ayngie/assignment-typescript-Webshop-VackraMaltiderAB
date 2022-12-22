@@ -85,8 +85,8 @@ const createHtml = (productsInCart: Product[]) => {
     quantity.innerHTML = productsInCart[i].quantity.toString();
     quantity.classList.add("product-quantity"); //klass för senare styling
 
-    productsInCart[i].calculateSubtotal();
-    productLinePrice.innerHTML = productsInCart[i].subtotal.toString(); //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+    //productsInCart[i].calculateSubtotal();
+    productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
     productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
     //lägga till i html
