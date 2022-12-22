@@ -26,6 +26,11 @@ body{
     margin-bottom: 2%;
   }
 
+    //Product description
+    .product-description-label {
+      // display: none; //funkar inte
+    }
+
   //Product rows
   .product-item {
     margin: 1%;
@@ -42,7 +47,7 @@ body{
 
     //Product description
     .product-description {
-      display: none;
+      // display: none; //funkar inte
     }
 
     //Product image
@@ -67,7 +72,6 @@ body{
 
 /*-------------------------------------- Desktop ------------------------------------*/
 @media screen and (min-width: 1000px) {
-
   //Product title
   .product-title {
     font-size: 1.2em;
@@ -75,10 +79,11 @@ body{
 
   //Product description
   .product-description {
-    display: block; //varför syns inte?
+    display: inline; //varför syns inte?
     font-size: 0.9em;
   }
   .product-description-label {
+    display: inline; //varför syns inte?
     font-size: 1rem;
   }
 
