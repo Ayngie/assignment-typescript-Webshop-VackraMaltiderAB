@@ -88,7 +88,7 @@ const createHtml = (productsInCart: Product[]) => {
 
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
-      // alert("You clicked on subtract one.");
+      alert("You clicked on subtract one.");
       decreaseQuantityByOne(productsInCart[i]);
     });
 
@@ -118,6 +118,7 @@ const createHtml = (productsInCart: Product[]) => {
     totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
 };
+
 function decreaseQuantityByOne(product: Product) {
   console.log(product);
   if (product.quantity > 0) {
