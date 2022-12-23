@@ -21,7 +21,6 @@ const createHtml = (productsInCart: Product[]) => {
   let labelsContainer = document.createElement("div");
 
   let titleLabel = document.createElement("label");
-  let descriptionLabel = document.createElement("label");
   let imageLabel = document.createElement("label");
   let priceLabel = document.createElement("label");
   let quantityLabel = document.createElement("label");
@@ -29,22 +28,18 @@ const createHtml = (productsInCart: Product[]) => {
 
   labelsContainer.classList.add("labels");
   titleLabel.classList.add("product-title");
-  descriptionLabel.classList.add("product-description");
-  descriptionLabel.classList.add("product-description-label");
   imageLabel.classList.add("product-image");
   priceLabel.classList.add("product-price"); //klass för senare styling
   quantityLabel.classList.add("product-quantity"); //klass för senare styling
   subTotalLabel.classList.add("product-line-price"); //klass för senare styling
 
   titleLabel.innerHTML = "Produktnamn";
-  descriptionLabel.innerHTML = "Beskrivning";
   imageLabel.innerHTML = "Bild";
   priceLabel.innerHTML = "Pris";
   quantityLabel.innerHTML = "Antal";
   subTotalLabel.innerHTML = "Delsumma";
 
   labelsContainer.appendChild(titleLabel);
-  labelsContainer.appendChild(descriptionLabel);
   labelsContainer.appendChild(imageLabel);
   labelsContainer.appendChild(priceLabel);
   labelsContainer.appendChild(quantityLabel);
