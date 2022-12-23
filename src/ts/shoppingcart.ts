@@ -1,4 +1,5 @@
 import { Product } from "../ts/models/Product";
+import { calculateSubtotal } from "../ts/services/functions";
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -87,8 +88,8 @@ const createHtml = (productsInCart: Product[]) => {
     quantity.innerHTML = productsInCart[i].quantity.toString();
     addOne.innerHTML = "+";
     subtractOne.innerHTML = "-";
-    //productsInCart[i].calculateSubtotal();
-    productLinePrice.innerHTML = "0 kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+    calculateSubtotal(productsInCart[i]);
+    productLinePrice.innerHTML = productsInCart[i].subtotal.toString() + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
 
     addOne.addEventListener("click", () => {
       console.log("You clicked on add one.");
