@@ -1,5 +1,5 @@
 import { Product } from "../ts/models/Product";
-import { calculateSubtotal } from "../ts/services/functions";
+import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -110,9 +110,14 @@ const createHtml = (productsInCart: Product[]) => {
     productItem.appendChild(productLinePrice);
 
     container.appendChild(productItem);
+
+    let totalText: HTMLHeadingElement = document.getElementById(
+      "totalSum"
+    ) as HTMLHeadingElement;
+    let total = calculateTotal(productsInCart).toString();
+    totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
 };
-
 function decreaseQuantityByOne(product: Product) {
   console.log(product);
   if (product.quantity > 0) {
@@ -151,32 +156,10 @@ function increaseQuantityByOne(product: Product) {
   createHtml(productsInCart);
 }
 
-/*
-function addToCart(product: Product) {
-  if (product.quantity > 0) {
-    let index = shoppingCart.indexOf(product);
-    shoppingCart.splice(index, 1);
-    product.quantity++;
-    shoppingCart.push(product);
-
-    let savedCart = JSON.stringify(shoppingCart);
-
-    localStorage.setItem("varukorg", savedCart);
-  } else {
-    product.quantity++;
-    let productToCart = product;
-    shoppingCart.push(productToCart);
-
-    let savedCart = JSON.stringify(shoppingCart);
-
-    localStorage.setItem("varukorg", savedCart);
+function calculateTotal() {
+  let total = 0;
+  for (let i = 0; i < productsInCart.length; i++) {
+    total += Number(productsInCart[i].price);
   }
-*/
-
-// function calculateTotal() {
-//   let total = 0;
-//   for (let i = 0; i < productsInCart.length; i++) {
-//     total += Number(productsInCart[i].price);
-//   }
-//   return total;
-// }
+  return total;
+}

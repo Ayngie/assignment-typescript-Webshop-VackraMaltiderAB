@@ -1,16 +1,17 @@
 /*-------------------------------------- Mobile first ------------------------------------*/
-body{ 
-  margin: 0; 
+body {
+  margin: 0;
 
   #h1 {
     display: flex;
     justify-content: center;
   }
- 
+
   //Labels row
   .labels {
     margin: 1%;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+      Helvetica, Arial, sans-serif;
     font-weight: 100;
 
     border-top: 1px solid grey;
@@ -23,6 +24,11 @@ body{
 
     padding-bottom: 1%;
     border-bottom: 1px solid grey;
+  }
+
+  #totalSum {
+    float: right;
+    margin-right: 20px;
   }
 
   //Product rows
@@ -50,7 +56,7 @@ body{
     .quantity-container {
       display: flex;
       flex-direction: row;
-      gap: 10%;      
+      gap: 10%;
       align-items: center;
 
       .clickable {
@@ -65,22 +71,21 @@ body{
 
       //FÅR INTE ATT FUNKA ?!
       // .product-quantity {
-      //   vertical-align: middle;      
+      //   vertical-align: middle;
       // }
     }
-  
-  //FÅR INTE ATT FUNKA ?!
-  // .btn-light {
-  //   display: flex;
-  //   justify-content: flex-end;
-  // }
-  // #btn-go-to-checkout:link {
-  //   text-decoration: none;
-  //  }
+
+    //FÅR INTE ATT FUNKA ?!
+    // .btn-light {
+    //   display: flex;
+    //   justify-content: flex-end;
+    // }
+    // #btn-go-to-checkout:link {
+    //   text-decoration: none;
+    //  }
   }
 
-
-  //Footer 
+  //Footer
   .footer-container {
     display: flex;
     justify-content: center;

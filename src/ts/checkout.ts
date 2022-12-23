@@ -1,4 +1,5 @@
 import { Product } from "../ts/models/Product";
+import { calculateSubtotal, calculateTotal } from "./services/functions";
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -48,4 +49,72 @@ const createHtml = (productsInCart: Product[]) => {
   container.appendChild(labelsContainer);
 
   //for-loop här (kopieras från varukorgssidan när den är klar)
+  for (let i = 0; i < productsInCart.length; i++) {
+    //skapa upp objekt i varukorg
+    let productItem = document.createElement("div");
+
+    let title = document.createElement("h3");
+    let img = document.createElement("img");
+    let price = document.createElement("p");
+    let quantityContainer = document.createElement("div");
+    let addOne = document.createElement("button");
+    let quantity = document.createElement("p");
+    let subtractOne = document.createElement("button");
+    let productLinePrice = document.createElement("p");
+
+    productItem.classList.add("product-item");
+    title.classList.add("product-title");
+    img.classList.add("product-image");
+    price.classList.add("product-price"); //klass för senare styling
+    quantityContainer.classList.add("quantity-container"); //klass för senare styling
+    quantity.classList.add("product-quantity"); //klass för senare styling
+    addOne.classList.add("add-one"); //klass för senare styling
+    addOne.classList.add("clickable"); //klass för senare styling
+    subtractOne.classList.add("subtract-one"); //klass för senare styling
+    subtractOne.classList.add("clickable"); //klass för senare styling
+    productLinePrice.classList.add("product-line-price"); //klass för senare styling
+
+    title.innerHTML = productsInCart[i].title;
+    img.src = productsInCart[i].imgUrl;
+    img.alt = productsInCart[i].title;
+    price.innerHTML = productsInCart[i].price + " kr";
+    quantity.innerHTML = productsInCart[i].quantity.toString();
+    addOne.innerHTML = "+";
+    subtractOne.innerHTML = "-";
+    calculateSubtotal(productsInCart[i]);
+    productLinePrice.innerHTML = productsInCart[i].subtotal.toString() + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+
+    addOne.addEventListener("click", () => {
+      console.log("You clicked on add one.");
+      alert("You clicked on add one.");
+      // FUNKTION för att öka
+      //increaseQuantityByOne(productsInCart[i]);
+    });
+
+    subtractOne.addEventListener("click", () => {
+      console.log("You clicked on subtract one. ");
+      alert("You clicked on subtract one.");
+      // FUNKTION för att minska
+      //decreaseQuantityByOne(productsInCart[i]);
+    });
+
+    productItem.appendChild(title);
+    productItem.appendChild(img);
+    productItem.appendChild(price);
+
+    quantityContainer.appendChild(subtractOne);
+    quantityContainer.appendChild(quantity);
+    quantityContainer.appendChild(addOne);
+    productItem.appendChild(quantityContainer);
+
+    productItem.appendChild(productLinePrice);
+
+    container.appendChild(productItem);
+
+    let totalText: HTMLHeadingElement = document.getElementById(
+      "totalSum"
+    ) as HTMLHeadingElement;
+    let total = calculateTotal(productsInCart).toString();
+    totalText.innerHTML = "Totalbelopp " + total + " kr";
+  }
 };
