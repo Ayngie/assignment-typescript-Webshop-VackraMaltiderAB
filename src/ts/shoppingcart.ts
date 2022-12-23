@@ -77,24 +77,25 @@ const createHtml = (productsInCart: Product[]) => {
     img.src = productsInCart[i].imgUrl;
     img.alt = productsInCart[i].title;
     price.innerHTML = productsInCart[i].price + " kr";
-    quantity.innerHTML = productsInCart[i].quantity.toString();
     addOne.innerHTML = "+";
     subtractOne.innerHTML = "-";
+
+    // increaseQuantityByOne(productsInCart[i]); //anrop av funktion för att minska quantity
+    quantity.innerHTML = productsInCart[i].quantity.toString();
+
     calculateSubtotal(productsInCart[i]);
     productLinePrice.innerHTML = productsInCart[i].subtotal.toString() + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
 
-    addOne.addEventListener("click", () => {
-      console.log("You clicked on add one.");
-      alert("You clicked on add one.");
-      // FUNKTION för att öka
-      // increaseQuantityByOne();
-    });
-
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
-      alert("You clicked on subtract one.");
-      // FUNKTION för att minska
-      // decreaseQuantityByOne();
+      // alert("You clicked on subtract one.");
+      decreaseQuantityByOne(productsInCart[i]);
+    });
+
+    addOne.addEventListener("click", () => {
+      console.log("You clicked on add one.");
+      // alert("You clicked on add one.");
+      increaseQuantityByOne(productsInCart[i]);
     });
 
     productItem.appendChild(title);
@@ -112,10 +113,70 @@ const createHtml = (productsInCart: Product[]) => {
   }
 };
 
-function calculateTotal() {
-  let total = 0;
-  for (let i = 0; i < productsInCart.length; i++) {
-    total += Number(productsInCart[i].price);
+function decreaseQuantityByOne(product: Product) {
+  console.log(product);
+  if (product.quantity > 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+    product.quantity--;
+    productsInCart.push(product);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
   }
-  return total;
+  if (product.quantity === 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+  createHtml(productsInCart);
 }
+
+function increaseQuantityByOne(product: Product) {
+  console.log(product);
+  if (product.quantity >= 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+    product.quantity++;
+    productsInCart.push(product);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+  createHtml(productsInCart);
+}
+
+/*
+function addToCart(product: Product) {
+  if (product.quantity > 0) {
+    let index = shoppingCart.indexOf(product);
+    shoppingCart.splice(index, 1);
+    product.quantity++;
+    shoppingCart.push(product);
+
+    let savedCart = JSON.stringify(shoppingCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  } else {
+    product.quantity++;
+    let productToCart = product;
+    shoppingCart.push(productToCart);
+
+    let savedCart = JSON.stringify(shoppingCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+*/
+
+// function calculateTotal() {
+//   let total = 0;
+//   for (let i = 0; i < productsInCart.length; i++) {
+//     total += Number(productsInCart[i].price);
+//   }
+//   return total;
+// }
