@@ -1,4 +1,5 @@
 import { Product } from "../ts/models/Product";
+import { CartItem } from "./models/CartItem";
 import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 // localStorage.clear();
 
@@ -140,7 +141,7 @@ function decreaseQuantityByOne(product: Product) {
 }
 
 function increaseQuantityByOne(product: Product) {
-  // console.log(product);
+  console.log(product);
   product.quantity++;
   let savedCart = JSON.stringify(productsInCart);
 
