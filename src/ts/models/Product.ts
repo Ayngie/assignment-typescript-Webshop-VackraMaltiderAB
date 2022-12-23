@@ -10,7 +10,4 @@ export class Product {
     public quantity: number,
     public subtotal: number
   ) {}
-  calculateSubtotal() {
-    this.subtotal = this.price * this.quantity;
-  }
 }
