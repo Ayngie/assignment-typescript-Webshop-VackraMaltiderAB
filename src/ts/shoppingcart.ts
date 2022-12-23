@@ -109,13 +109,19 @@ const createHtml = (productsInCart: Product[]) => {
     productItem.appendChild(productLinePrice);
 
     container.appendChild(productItem);
+
+    let totalText: HTMLHeadingElement = document.getElementById(
+      "totalSum"
+    ) as HTMLHeadingElement;
+    let total = calculateTotal().toString();
+    totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
 };
 
 function calculateTotal() {
   let total = 0;
   for (let i = 0; i < productsInCart.length; i++) {
-    total += Number(productsInCart[i].price);
+    total += Number(productsInCart[i].subtotal);
   }
   return total;
 }
