@@ -121,12 +121,9 @@ const createHtml = (productsInCart: Product[]) => {
 
 function decreaseQuantityByOne(product: Product) {
   console.log(product);
-  if (product.quantity > 0) {
-    let index = productsInCart.indexOf(product);
-    productsInCart.splice(index, 1);
-    product.quantity--;
-    productsInCart.push(product);
 
+  if (product.quantity > 0) {
+    product.quantity--;
     let savedCart = JSON.stringify(productsInCart);
 
     localStorage.setItem("varukorg", savedCart);
@@ -143,16 +140,11 @@ function decreaseQuantityByOne(product: Product) {
 }
 
 function increaseQuantityByOne(product: Product) {
-  console.log(product);
-  if (product.quantity > 0) {
-    let index = productsInCart.indexOf(product);
-    productsInCart.splice(index, 1);
-    product.quantity++;
-    productsInCart.push(product);
+  // console.log(product);
+  product.quantity++;
+  let savedCart = JSON.stringify(productsInCart);
 
-    let savedCart = JSON.stringify(productsInCart);
+  localStorage.setItem("varukorg", savedCart);
 
-    localStorage.setItem("varukorg", savedCart);
-  }
   createHtml(productsInCart);
 }
