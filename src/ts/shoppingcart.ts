@@ -1,5 +1,5 @@
 import { Product } from "../ts/models/Product";
-import { calculateSubtotal } from "../ts/services/functions";
+import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -87,14 +87,14 @@ const createHtml = (productsInCart: Product[]) => {
       console.log("You clicked on add one.");
       alert("You clicked on add one.");
       // FUNKTION för att öka
-      // increaseQuantityByOne();
+      //increaseQuantityByOne();
     });
 
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
       alert("You clicked on subtract one.");
       // FUNKTION för att minska
-      // decreaseQuantityByOne();
+      //decreaseQuantityByOne();
     });
 
     productItem.appendChild(title);
@@ -113,15 +113,7 @@ const createHtml = (productsInCart: Product[]) => {
     let totalText: HTMLHeadingElement = document.getElementById(
       "totalSum"
     ) as HTMLHeadingElement;
-    let total = calculateTotal().toString();
+    let total = calculateTotal(productsInCart).toString();
     totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
 };
-
-function calculateTotal() {
-  let total = 0;
-  for (let i = 0; i < productsInCart.length; i++) {
-    total += Number(productsInCart[i].subtotal);
-  }
-  return total;
-}

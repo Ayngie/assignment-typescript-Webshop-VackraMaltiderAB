@@ -1,5 +1,5 @@
-body{ 
-  margin: 0; 
+body {
+  margin: 0;
 
   #h1 {
     display: flex;
@@ -9,7 +9,8 @@ body{
   //Labels row
   .labels {
     margin: 1%;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+      Helvetica, Arial, sans-serif;
     font-weight: 100;
 
     border-top: 1px solid grey;
@@ -23,6 +24,11 @@ body{
     padding-bottom: 1%;
     border-bottom: 1px solid grey;
     margin-bottom: 2%;
+  }
+
+  #totalSum {
+    float: right;
+    margin-right: 20px;
   }
 
   //Product rows
@@ -43,22 +49,39 @@ body{
     .product-image {
       width: 30%;
     }
-  //FÅR INTE ATT FUNKA ?!
-  // .btn-light {
-  //   display: flex;
-  //   justify-content: flex-end;
-  // }
-  // #btn-go-back-to-shoppingcart:link {
-  //   text-decoration: none;
-  //  }
+    //FÅR INTE ATT FUNKA ?!
+    // .btn-light {
+    //   display: flex;
+    //   justify-content: flex-end;
+    // }
+    // #btn-go-back-to-shoppingcart:link {
+    //   text-decoration: none;
+    //  }
+
+    .quantity-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10%;
+      align-items: center;
+
+      .clickable {
+        border: none;
+        border-radius: 50px;
+        transition-duration: 0.4s;
+      }
+      .clickable:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+    }
   }
 
-  //Footer 
+  //Footer
   .footer-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8rem;    
+    font-size: 0.8rem;
     position: absolute;
     margin-top: 20px;
     width: 100%;
@@ -67,10 +90,8 @@ body{
   }
 }
 
-
 /*-------------------------------------- Desktop ------------------------------------*/
 @media screen and (min-width: 1000px) {
-
   //Product title
   .product-title {
     font-size: 1.2em;
