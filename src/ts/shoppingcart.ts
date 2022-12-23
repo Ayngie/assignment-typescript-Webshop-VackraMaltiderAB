@@ -1,5 +1,6 @@
 import { Product } from "../ts/models/Product";
 import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
+// localStorage.clear();
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -80,7 +81,6 @@ const createHtml = (productsInCart: Product[]) => {
     addOne.innerHTML = "+";
     subtractOne.innerHTML = "-";
 
-    // increaseQuantityByOne(productsInCart[i]); //anrop av funktion för att minska quantity
     quantity.innerHTML = productsInCart[i].quantity.toString();
 
     calculateSubtotal(productsInCart[i]);
@@ -88,7 +88,7 @@ const createHtml = (productsInCart: Product[]) => {
 
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
-      alert("You clicked on subtract one.");
+      // alert("You clicked on subtract one.");
       decreaseQuantityByOne(productsInCart[i]);
     });
 
@@ -144,7 +144,7 @@ function decreaseQuantityByOne(product: Product) {
 
 function increaseQuantityByOne(product: Product) {
   console.log(product);
-  if (product.quantity >= 0) {
+  if (product.quantity > 0) {
     let index = productsInCart.indexOf(product);
     productsInCart.splice(index, 1);
     product.quantity++;
@@ -155,12 +155,4 @@ function increaseQuantityByOne(product: Product) {
     localStorage.setItem("varukorg", savedCart);
   }
   createHtml(productsInCart);
-}
-
-function calculateTotal() {
-  let total = 0;
-  for (let i = 0; i < productsInCart.length; i++) {
-    total += Number(productsInCart[i].price);
-  }
-  return total;
 }

@@ -1,5 +1,6 @@
 import { Product } from "../ts/models/Product";
 import { calculateSubtotal, calculateTotal } from "./services/functions";
+// localStorage.clear();
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -11,7 +12,7 @@ let productsInCart: Product[] = JSON.parse(
 );
 
 //funktion för att visa upp varukorgen i html
-const createHtml = (productsInCart: Product[]) => {
+export const createHtml = (productsInCart: Product[]) => {
   let container: HTMLDivElement = document.getElementById(
     "minKassaVarukorg"
   ) as HTMLDivElement; //hämta container för varukorgens produkter att läggas in i.
@@ -48,7 +49,6 @@ const createHtml = (productsInCart: Product[]) => {
 
   container.appendChild(labelsContainer);
 
-  //for-loop här (kopieras från varukorgssidan när den är klar)
   for (let i = 0; i < productsInCart.length; i++) {
     //skapa upp objekt i varukorg
     let productItem = document.createElement("div");
@@ -81,21 +81,22 @@ const createHtml = (productsInCart: Product[]) => {
     quantity.innerHTML = productsInCart[i].quantity.toString();
     addOne.innerHTML = "+";
     subtractOne.innerHTML = "-";
+
+    quantity.innerHTML = productsInCart[i].quantity.toString();
+
     calculateSubtotal(productsInCart[i]);
     productLinePrice.innerHTML = productsInCart[i].subtotal.toString() + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
 
-    addOne.addEventListener("click", () => {
-      console.log("You clicked on add one.");
-      alert("You clicked on add one.");
-      // FUNKTION för att öka
-      //increaseQuantityByOne(productsInCart[i]);
-    });
-
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
-      alert("You clicked on subtract one.");
-      // FUNKTION för att minska
-      //decreaseQuantityByOne(productsInCart[i]);
+      // alert("You clicked on subtract one.");
+      decreaseQuantityByOne(productsInCart[i]);
+    });
+
+    addOne.addEventListener("click", () => {
+      console.log("You clicked on add one.");
+      // alert("You clicked on add one.");
+      increaseQuantityByOne(productsInCart[i]);
     });
 
     productItem.appendChild(title);
@@ -118,3 +119,41 @@ const createHtml = (productsInCart: Product[]) => {
     totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
 };
+
+function decreaseQuantityByOne(product: Product) {
+  console.log(product);
+  if (product.quantity > 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+    product.quantity--;
+    productsInCart.push(product);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+  if (product.quantity === 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+  createHtml(productsInCart);
+}
+
+function increaseQuantityByOne(product: Product) {
+  console.log(product);
+  if (product.quantity > 0) {
+    let index = productsInCart.indexOf(product);
+    productsInCart.splice(index, 1);
+    product.quantity++;
+    productsInCart.push(product);
+
+    let savedCart = JSON.stringify(productsInCart);
+
+    localStorage.setItem("varukorg", savedCart);
+  }
+  createHtml(productsInCart);
+}

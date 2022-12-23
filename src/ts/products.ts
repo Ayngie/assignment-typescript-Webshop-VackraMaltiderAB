@@ -1,5 +1,5 @@
 import { Product } from "./models/Product";
-//localStorage.clear();
+// localStorage.clear();
 
 let shoppingCart: Product[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
