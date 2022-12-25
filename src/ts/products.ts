@@ -1,5 +1,9 @@
+import { iteratee } from "cypress/types/lodash";
 import { Product } from "./models/Product";
 //localStorage.clear();
+
+
+
 
 let shoppingCart: Product[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
@@ -72,7 +76,9 @@ let products: Product[] = [
     0,
     0
   ),
+  
 ];
+
 
 function createHtml() {
   let productContainer = document.getElementById("product-container");
@@ -80,7 +86,7 @@ function createHtml() {
   for (let i = 0; i < products.length; i++) {
     let product = document.createElement("div");
     product.id = "product";
-    product.classList.add("product");
+    product.classList.add("product", "hide");
 
     let title = document.createElement("h3");
     title.innerHTML = products[i].title;
@@ -152,4 +158,9 @@ function addToCart(product: Product) {
   }
 }
 
+
+
+
+
 createHtml();
+

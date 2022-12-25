@@ -55,6 +55,15 @@
     </header>
     <article>
       <h1 id="h1">Våra produkter</h1>
+<!-- Product Category Filter -->
+      <div class="filter-btns">
+        <button type="button" class="filter-btn" onclick="filterProduct()">Alla produkter</button>
+        <button type="button" class="filter-btn" id="storTallrik">Stor Tallrik</button>
+        <button type="button" class="filter-btn" id="litenTallrik">Liten Tallrik</button>
+        <button type="button" class="filter-btn" id="muggar">Muggar</button>
+      </div>
+
+
       <div id="product-container" class="product-container"></div>
       <button type="button" class="btn btn-light">
         <a id="btn-go-to-shoppingcart" href="../html/shoppingcart.html"
