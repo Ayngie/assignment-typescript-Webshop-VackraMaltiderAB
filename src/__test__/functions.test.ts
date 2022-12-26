@@ -3,7 +3,7 @@
 *@jest-environment jsdom 
 
 */
-import { Product } from "../ts/models/Product";
+/*import { Product } from "../ts/models/Product";
 import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 
 test("should calculate subtotal", () => {
@@ -57,4 +57,4 @@ test("should calculate total", () => {
   let total = calculateTotal(products);
   // Assert
   expect(total).toBe(965);
-});
+}); */

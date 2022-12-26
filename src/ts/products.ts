@@ -1,3 +1,4 @@
+import { iteratee } from "cypress/types/lodash";
 import { Product } from "./models/Product";
 //localStorage.clear();
 
@@ -154,3 +155,34 @@ export function addToCart(product: Product) {
 }
 
 createHtml(products);
+
+//Filter Products
+
+let filterBtnOne = document.getElementById("allaProdukter") as HTMLInputElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
+let filterBtnThree = document.getElementById(
+  "litenTallrik"
+) as HTMLInputElement;
+let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
+
+let selectedFilter: string = "";
+
+filterBtnOne.addEventListener("click", () => {
+  selectedFilter = "Alla Produkter";
+  console.log("Alla Produkter");
+});
+
+filterBtnTwo.addEventListener("click", () => {
+  selectedFilter = "Stor Tallrik";
+  console.log("Stor Tallrik");
+});
+
+filterBtnThree.addEventListener("click", () => {
+  selectedFilter = "Litten Tallrik";
+  console.log("Liten Tallrik");
+});
+
+filterBtnFour.addEventListener("click", () => {
+  selectedFilter = "Muggar";
+  console.log("Muggar");
+});
