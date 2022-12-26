@@ -74,7 +74,7 @@ let products: Product[] = [
   ),
 ];
 
-function createHtml() {
+export function createHtml(products: Product[]) {
   let productContainer = document.getElementById("product-container");
 
   for (let i = 0; i < products.length; i++) {
@@ -113,6 +113,7 @@ function createHtml() {
     price.innerHTML = products[i].price + " kr";
 
     let addToCartBtn = document.createElement("button");
+    addToCartBtn.id = "addToCartBtn";
     addToCartBtn.classList.add("add-to-cart-btn");
     // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
     addToCartBtn.innerHTML = "Lägg i varukorgen";
@@ -131,7 +132,7 @@ function createHtml() {
   }
 }
 
-function addToCart(product: Product) {
+export function addToCart(product: Product) {
   if (product.quantity > 0) {
     let index = shoppingCart.indexOf(product);
     shoppingCart.splice(index, 1);
@@ -152,4 +153,4 @@ function addToCart(product: Product) {
   }
 }
 
-createHtml();
+createHtml(products);
