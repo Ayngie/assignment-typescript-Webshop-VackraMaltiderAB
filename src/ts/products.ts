@@ -86,7 +86,7 @@ function createHtml() {
   for (let i = 0; i < products.length; i++) {
     let product = document.createElement("div");
     product.id = "product";
-    product.classList.add("product", "hide");
+    product.classList.add("product");
 
     let title = document.createElement("h3");
     title.innerHTML = products[i].title;
@@ -159,8 +159,34 @@ function addToCart(product: Product) {
 }
 
 
-
-
-
 createHtml();
 
+//Filter Products
+
+let filterBtnOne = document.getElementById("allaProdukter")as HTMLInputElement;
+let filterBtnTwo = document.getElementById("storTallrik")as HTMLInputElement;
+let filterBtnThree = document.getElementById("litenTallrik")as HTMLInputElement;
+let filterBtnFour = document.getElementById("muggar")as HTMLInputElement;
+
+
+let selectedFilter: string = "";
+
+filterBtnOne.addEventListener("click", () => {
+  selectedFilter = "Alla Produkter";
+  console.log("Alla Produkter");
+});
+
+filterBtnTwo.addEventListener("click", () => {
+  selectedFilter = "Stor Tallrik";
+  console.log("Stor Tallrik");
+});
+
+filterBtnThree.addEventListener("click", () => {
+  selectedFilter = "Litten Tallrik";
+  console.log("Liten Tallrik");
+});
+
+filterBtnFour.addEventListener("click", () => {
+  selectedFilter = "Muggar";
+  console.log("Muggar");
+});

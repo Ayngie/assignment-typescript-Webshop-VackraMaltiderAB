@@ -7,11 +7,11 @@ body {
     justify-content: center;
   }
 
-  .filter-btns {
+  .buttons {
     margin-top: 40px;
   }
 
-  .filter-btn {
+  .button-value {
     background: none;
     cursor: pointer;
     border: none;
@@ -24,8 +24,7 @@ body {
     letter-spacing: 1px;
     position: relative;
   }
-  .filter-btn::after {
-    content: "";
+  .button-value:after {
     position: absolute;
     top: 110%;
     left: 50%;
@@ -35,6 +34,7 @@ body {
     background-color: #555;
     transition: all 0.2 ease-in-out;
   }
+  
   
   
   .product-container {
