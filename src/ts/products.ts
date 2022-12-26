@@ -1,8 +1,9 @@
 import { iteratee } from "cypress/types/lodash";
+import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
 //localStorage.clear();
 
-let shoppingCart: Product[] = JSON.parse(
+let shoppingCart: CartItem[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
 );
 
@@ -134,18 +135,40 @@ export function createHtml(products: Product[]) {
 }
 
 export function addToCart(product: Product) {
-  if (product.quantity > 0) {
-    let index = shoppingCart.indexOf(product);
-    shoppingCart.splice(index, 1);
-    product.quantity++;
-    shoppingCart.push(product);
+  alert("du klickade");
+  if (shoppingCart.length > 0) {
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (product === shoppingCart[i].product) {
+        let index = shoppingCart.indexOf(shoppingCart[i]);
+        let quantity = shoppingCart[i].quantity;
+        shoppingCart.splice(index, 1);
+        quantity++;
 
-    let savedCart = JSON.stringify(shoppingCart);
+        let productToCart: CartItem = new CartItem(product, quantity);
 
-    localStorage.setItem("varukorg", savedCart);
+        shoppingCart.push(productToCart);
+
+        let savedCart = JSON.stringify(shoppingCart);
+
+        localStorage.setItem("varukorg", savedCart);
+      } else {
+        let quantity = 0;
+        quantity++;
+        let productToCart: CartItem = new CartItem(product, quantity);
+
+        shoppingCart.push(productToCart);
+
+        let savedCart = JSON.stringify(shoppingCart);
+
+        localStorage.setItem("varukorg", savedCart);
+        break;
+      }
+    }
   } else {
-    product.quantity++;
-    let productToCart = product;
+    let quantity = 0;
+    quantity++;
+    let productToCart: CartItem = new CartItem(product, quantity);
+
     shoppingCart.push(productToCart);
 
     let savedCart = JSON.stringify(shoppingCart);
