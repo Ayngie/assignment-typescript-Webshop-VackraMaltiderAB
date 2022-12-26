@@ -1,4 +1,5 @@
 import { Product } from "../ts/models/Product";
+import { CartItem } from "./models/CartItem";
 import { calculateSubtotal, calculateTotal } from "./services/functions";
 // localStorage.clear();
 
@@ -7,12 +8,12 @@ window.onload = function () {
 };
 
 //hämta kundens lista av produkter från localstorage.
-let productsInCart: Product[] = JSON.parse(
+let productsInCart: CartItem[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
 );
 
 //funktion för att visa upp varukorgen i html
-export const createHtml = (productsInCart: Product[]) => {
+export const createHtml = (productsInCart: CartItem[]) => {
   let container: HTMLDivElement = document.getElementById(
     "minKassaVarukorg"
   ) as HTMLDivElement; //hämta container för varukorgens produkter att läggas in i.
@@ -74,18 +75,17 @@ export const createHtml = (productsInCart: Product[]) => {
     subtractOne.classList.add("clickable"); //klass för senare styling
     productLinePrice.classList.add("product-line-price"); //klass för senare styling
 
-    title.innerHTML = productsInCart[i].title;
-    img.src = productsInCart[i].imgUrl;
-    img.alt = productsInCart[i].title;
-    price.innerHTML = productsInCart[i].price + " kr";
+    title.innerHTML = productsInCart[i].product.title;
+    img.src = productsInCart[i].product.imgUrl;
+    img.alt = productsInCart[i].product.title;
+    price.innerHTML = productsInCart[i].product.price + " kr";
     quantity.innerHTML = productsInCart[i].quantity.toString();
     addOne.innerHTML = "+";
     subtractOne.innerHTML = "-";
 
     quantity.innerHTML = productsInCart[i].quantity.toString();
 
-    calculateSubtotal(productsInCart[i]);
-    productLinePrice.innerHTML = productsInCart[i].subtotal.toString() + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
+    productLinePrice.innerHTML = calculateSubtotal(productsInCart[i]) + " kr"; //OBS! BEHÖVER UPPDATERING för att visa aktuell delsumma
 
     subtractOne.addEventListener("click", () => {
       console.log("You clicked on subtract one. ");
@@ -120,7 +120,7 @@ export const createHtml = (productsInCart: Product[]) => {
   }
 };
 
-function decreaseQuantityByOne(product: Product) {
+function decreaseQuantityByOne(product: CartItem) {
   console.log(product);
   if (product.quantity > 0) {
     let index = productsInCart.indexOf(product);
@@ -143,7 +143,7 @@ function decreaseQuantityByOne(product: Product) {
   createHtml(productsInCart);
 }
 
-function increaseQuantityByOne(product: Product) {
+function increaseQuantityByOne(product: CartItem) {
   console.log(product);
   if (product.quantity > 0) {
     let index = productsInCart.indexOf(product);

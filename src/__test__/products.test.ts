@@ -19,7 +19,6 @@ describe("createHtml", () => {
         345,
         "Tallrikar",
         "Sand",
-        0,
         0
       ),
       new Product(
@@ -30,7 +29,6 @@ describe("createHtml", () => {
         275,
         "Tallrikar",
         "Cinnamon",
-        0,
         0
       ),
       new Product(
@@ -41,7 +39,6 @@ describe("createHtml", () => {
         275,
         "Tallrikar",
         "Sand",
-        0,
         0
       ),
     ];
@@ -69,7 +66,6 @@ describe("createHtml", () => {
         345,
         "Tallrikar",
         "Sand",
-        0,
         0
       ),
     ];

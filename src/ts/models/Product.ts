@@ -7,7 +7,6 @@ export class Product {
     public price: number,
     public category: string,
     public color: string,
-    public quantity: number,
     public subtotal: number
   ) {}
 }

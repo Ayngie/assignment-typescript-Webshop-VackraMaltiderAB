@@ -16,7 +16,6 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Sand",
-    0,
     0
   ),
   new Product(
@@ -27,7 +26,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Cinnamon",
-    0,
     0
   ),
   new Product(
@@ -38,7 +36,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Sand",
-    0,
     0
   ),
   new Product(
@@ -49,7 +46,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Viol",
-    0,
     0
   ),
   new Product(
@@ -60,7 +56,6 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Cinnamon",
-    0,
     0
   ),
   new Product(
@@ -71,7 +66,6 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Viol",
-    0,
     0
   ),
 ];
