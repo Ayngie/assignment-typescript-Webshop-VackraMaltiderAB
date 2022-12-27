@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  
 
   #h1 {
     display: flex;
@@ -79,6 +80,90 @@ body {
     //   text-decoration: none;
     //  }
   }
+
+  //Betalning
+
+  .container-payment {
+   
+    height: 80vh;
+    background-color: #eeeeee;
+    margin: 40px 20px;
+    
+  
+  }
+
+  h2 {
+    padding: 10px 10px;
+    font-size: 30px;
+  }
+  h3 {
+    padding: 20px 10px;
+  }
+  form label {
+    color: #5a5a5a;
+    position: relative;
+    font-size: 1em;
+    word-spacing: 2px;
+    width: 80%;
+    margin-left: 20px;
+    justify-content: center;
+    
+  }
+
+  form #card_name , form #cardnr {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    text-transform: capitalize;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 1em;
+    margin: 15px;
+    background-color: transparent;
+   
+  }
+
+  .float {
+    display: flex;
+    width: 80%;
+  
+  }
+
+  #validtill , #cvv {
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    width: 130px;
+    padding-top: 15px;
+    margin-bottom: 50px;
+    background-color: transparent;
+  }
+
+
+  p {
+    font-size: 1em;
+    text-transform: none;
+  }
+
+  #btn-betala {
+    border: none;
+    background-color: #cccccc;
+    outline: none;
+    text-align: center;
+    width: 80%;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+  #btn-text {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+  }
+  
+
+  
   
   //Footer
   .footer-container {
@@ -127,4 +212,13 @@ body {
       font-size: 0.9rem;
     }
   }
+  //Betalning
+  .container-payment {
+    height: 80vh;
+    width: 60vh;
+    background-color: #ededed;
+    
+  
+  }
+
 }
