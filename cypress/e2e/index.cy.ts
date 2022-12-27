@@ -21,4 +21,7 @@ describe("startpage", () => {
         "https://mateus-images.imgix.net/Tablesettings/mateus_jul_mm00770_sRGB.jpg"
       );
   });
+  it("should find navbar", () => {
+    cy.get(".navbar").find(".navbar-nav").find("a").should("have.attr", "href");
+  });
 });
