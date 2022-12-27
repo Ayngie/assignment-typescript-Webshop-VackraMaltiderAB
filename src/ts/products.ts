@@ -70,6 +70,39 @@ let products: Product[] = [
   ),
 ];
 
+//Filter Products
+
+let filterBtnOne: HTMLInputElement = document.getElementById(
+  "allaProdukter"
+) as HTMLInputElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
+let filterBtnThree = document.getElementById(
+  "litenTallrik"
+) as HTMLInputElement;
+let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
+
+let selectedFilter: string = "";
+
+filterBtnOne?.addEventListener("click", () => {
+  selectedFilter = "Alla Produkter";
+  console.log("Alla Produkter"); //test
+});
+
+filterBtnTwo?.addEventListener("click", () => {
+  selectedFilter = "Stor Tallrik";
+  console.log("Stor Tallrik"); //test
+});
+
+filterBtnThree?.addEventListener("click", () => {
+  selectedFilter = "Litten Tallrik";
+  console.log("Liten Tallrik"); //test
+});
+
+filterBtnFour?.addEventListener("click", () => {
+  selectedFilter = "Muggar";
+  console.log("Muggar");
+});
+
 export function createHtml(products: Product[]) {
   let productContainer = document.getElementById("product-container");
 
@@ -114,7 +147,7 @@ export function createHtml(products: Product[]) {
     // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
     addToCartBtn.innerHTML = "Lägg i varukorgen";
     addToCartBtn.addEventListener("click", () => {
-      addToCart(products[i]);
+      exports.addToCart(products[i]);
     });
 
     productContainer?.appendChild(product);
@@ -129,7 +162,6 @@ export function createHtml(products: Product[]) {
 }
 
 export function addToCart(product: Product) {
-  alert("du klickade");
   let foundItem: boolean = false;
   let index: number = 0;
   let quantity: number = 0;
@@ -177,34 +209,3 @@ export function addToCart(product: Product) {
 }
 
 createHtml(products);
-
-//Filter Products
-
-let filterBtnOne = document.getElementById("allaProdukter") as HTMLInputElement;
-let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
-let filterBtnThree = document.getElementById(
-  "litenTallrik"
-) as HTMLInputElement;
-let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
-
-let selectedFilter: string = "";
-
-filterBtnOne.addEventListener("click", () => {
-  selectedFilter = "Alla Produkter";
-  console.log("Alla Produkter"); //test
-});
-
-filterBtnTwo.addEventListener("click", () => {
-  selectedFilter = "Stor Tallrik";
-  console.log("Stor Tallrik"); //test
-});
-
-filterBtnThree.addEventListener("click", () => {
-  selectedFilter = "Litten Tallrik";
-  console.log("Liten Tallrik"); //test
-});
-
-filterBtnFour.addEventListener("click", () => {
-  selectedFilter = "Muggar";
-  console.log("Muggar");
-});
