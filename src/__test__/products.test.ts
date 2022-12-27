@@ -4,6 +4,7 @@
 
 */
 
+import { test, expect, describe, jest } from "@jest/globals";
 import { Product } from "../ts/models/Product";
 import * as functions from "../ts/products";
 
@@ -56,7 +57,21 @@ describe("createHtml", () => {
   test("should call addToCart", () => {
     // Arrange
     let spy = jest.spyOn(functions, "addToCart").mockReturnValue();
-    document.body.innerHTML = `<div id="product-container" class="product-container"><button id="addToCartBtn">Lägg till i varukorgen</button></div>`;
+    document.body.innerHTML = `<div class="buttons">
+    <button type="button" class="button-value" id="allaProdukter">
+      Alla produkter
+    </button>
+
+    <button type="button" class="button-value" id="storTallrik">
+      Stor Tallrik
+    </button>
+
+    <button type="button" class="button-value" id="litenTallrik">
+      Liten Tallrik
+    </button>
+
+    <button type="button" class="button-value" id="muggar">Muggar</button>
+  </div><div id="product-container" class="product-container"></div>`;
     let products: Product[] = [
       new Product(
         1,
@@ -72,7 +87,7 @@ describe("createHtml", () => {
     functions.createHtml(products);
 
     // Act
-    document.querySelector("button")?.click();
+    document.getElementById("addToCartBtn")?.click();
 
     // Assert
     expect(spy).toHaveBeenCalled();
