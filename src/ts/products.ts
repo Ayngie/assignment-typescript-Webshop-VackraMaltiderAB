@@ -1,11 +1,9 @@
 import { iteratee } from "cypress/types/lodash";
+import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
 //localStorage.clear();
 
-
-
-
-let shoppingCart: Product[] = JSON.parse(
+let shoppingCart: CartItem[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
 );
 
@@ -18,7 +16,6 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Sand",
-    0,
     0
   ),
   new Product(
@@ -29,7 +26,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Cinnamon",
-    0,
     0
   ),
   new Product(
@@ -40,7 +36,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Sand",
-    0,
     0
   ),
   new Product(
@@ -51,7 +46,6 @@ let products: Product[] = [
     275,
     "Tallrikar",
     "Viol",
-    0,
     0
   ),
   new Product(
@@ -62,7 +56,6 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Cinnamon",
-    0,
     0
   ),
   new Product(
@@ -73,14 +66,11 @@ let products: Product[] = [
     345,
     "Tallrikar",
     "Viol",
-    0,
     0
   ),
-  
 ];
 
-
-function createHtml() {
+export function createHtml(products: Product[]) {
   let productContainer = document.getElementById("product-container");
 
   for (let i = 0; i < products.length; i++) {
@@ -119,6 +109,7 @@ function createHtml() {
     price.innerHTML = products[i].price + " kr";
 
     let addToCartBtn = document.createElement("button");
+    addToCartBtn.id = "addToCartBtn";
     addToCartBtn.classList.add("add-to-cart-btn");
     // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
     addToCartBtn.innerHTML = "Lägg i varukorgen";
@@ -137,19 +128,41 @@ function createHtml() {
   }
 }
 
-function addToCart(product: Product) {
-  if (product.quantity > 0) {
-    let index = shoppingCart.indexOf(product);
-    shoppingCart.splice(index, 1);
-    product.quantity++;
-    shoppingCart.push(product);
+export function addToCart(product: Product) {
+  alert("du klickade");
+  if (shoppingCart.length > 0) {
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (product === shoppingCart[i].product) {
+        let index = shoppingCart.indexOf(shoppingCart[i]);
+        let quantity = shoppingCart[i].quantity;
+        shoppingCart.splice(index, 1);
+        quantity++;
 
-    let savedCart = JSON.stringify(shoppingCart);
+        let productToCart: CartItem = new CartItem(product, quantity);
 
-    localStorage.setItem("varukorg", savedCart);
+        shoppingCart.push(productToCart);
+
+        let savedCart = JSON.stringify(shoppingCart);
+
+        localStorage.setItem("varukorg", savedCart);
+      } else {
+        let quantity = 0;
+        quantity++;
+        let productToCart: CartItem = new CartItem(product, quantity);
+
+        shoppingCart.push(productToCart);
+
+        let savedCart = JSON.stringify(shoppingCart);
+
+        localStorage.setItem("varukorg", savedCart);
+        break;
+      }
+    }
   } else {
-    product.quantity++;
-    let productToCart = product;
+    let quantity = 0;
+    quantity++;
+    let productToCart: CartItem = new CartItem(product, quantity);
+
     shoppingCart.push(productToCart);
 
     let savedCart = JSON.stringify(shoppingCart);
@@ -158,16 +171,16 @@ function addToCart(product: Product) {
   }
 }
 
-
-createHtml();
+createHtml(products);
 
 //Filter Products
 
-let filterBtnOne = document.getElementById("allaProdukter")as HTMLInputElement;
-let filterBtnTwo = document.getElementById("storTallrik")as HTMLInputElement;
-let filterBtnThree = document.getElementById("litenTallrik")as HTMLInputElement;
-let filterBtnFour = document.getElementById("muggar")as HTMLInputElement;
-
+let filterBtnOne = document.getElementById("allaProdukter") as HTMLInputElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
+let filterBtnThree = document.getElementById(
+  "litenTallrik"
+) as HTMLInputElement;
+let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
 
 let selectedFilter: string = "";
 
@@ -188,9 +201,14 @@ filterBtnThree.addEventListener("click", () => {
 
 filterBtnFour.addEventListener("click", () => {
   selectedFilter = "Muggar";
+<<<<<<< HEAD
   console.log("Muggar"); //test
 });
 
 
 
   
+=======
+  console.log("Muggar");
+});
+>>>>>>> 9af281a40d4b25c4b9084baa33c187450f48566f
