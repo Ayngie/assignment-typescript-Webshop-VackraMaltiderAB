@@ -130,33 +130,38 @@ export function createHtml(products: Product[]) {
 
 export function addToCart(product: Product) {
   alert("du klickade");
+  let foundItem: boolean = false;
+  let index: number = 0;
+  let quantity: number = 0;
   if (shoppingCart.length > 0) {
     for (let i = 0; i < shoppingCart.length; i++) {
       if (product === shoppingCart[i].product) {
-        let index = shoppingCart.indexOf(shoppingCart[i]);
-        let quantity = shoppingCart[i].quantity;
-        shoppingCart.splice(index, 1);
-        quantity++;
-
-        let productToCart: CartItem = new CartItem(product, quantity);
-
-        shoppingCart.push(productToCart);
-
-        let savedCart = JSON.stringify(shoppingCart);
-
-        localStorage.setItem("varukorg", savedCart);
-      } else {
-        let quantity = 0;
-        quantity++;
-        let productToCart: CartItem = new CartItem(product, quantity);
-
-        shoppingCart.push(productToCart);
-
-        let savedCart = JSON.stringify(shoppingCart);
-
-        localStorage.setItem("varukorg", savedCart);
-        break;
+        foundItem = true;
+        index = shoppingCart.indexOf(shoppingCart[i]);
+        quantity = shoppingCart[i].quantity;
       }
+    }
+    if (foundItem) {
+      shoppingCart.splice(index, 1);
+      quantity++;
+
+      let productToCart: CartItem = new CartItem(product, quantity);
+
+      shoppingCart.push(productToCart);
+
+      let savedCart = JSON.stringify(shoppingCart);
+
+      localStorage.setItem("varukorg", savedCart);
+    } else {
+      let quantity = 0;
+      quantity++;
+      let productToCart: CartItem = new CartItem(product, quantity);
+
+      shoppingCart.push(productToCart);
+
+      let savedCart = JSON.stringify(shoppingCart);
+
+      localStorage.setItem("varukorg", savedCart);
     }
   } else {
     let quantity = 0;
@@ -201,14 +206,5 @@ filterBtnThree.addEventListener("click", () => {
 
 filterBtnFour.addEventListener("click", () => {
   selectedFilter = "Muggar";
-<<<<<<< HEAD
-  console.log("Muggar"); //test
-});
-
-
-
-  
-=======
   console.log("Muggar");
 });
->>>>>>> 9af281a40d4b25c4b9084baa33c187450f48566f
