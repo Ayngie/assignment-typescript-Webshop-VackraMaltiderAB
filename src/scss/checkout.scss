@@ -35,9 +35,12 @@ body {
   .product-item {
     margin: 1%;
     display: grid;
+    align-items: center;
+    justify-content: center;
     gap: 1em;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    padding: 1%;
     border-bottom: 1px solid rgb(206, 206, 206);
 
     //Product title
@@ -49,14 +52,6 @@ body {
     .product-image {
       width: 30%;
     }
-    //FÅR INTE ATT FUNKA ?!
-    // .btn-light {
-    //   display: flex;
-    //   justify-content: flex-end;
-    // }
-    // #btn-go-back-to-shoppingcart:link {
-    //   text-decoration: none;
-    //  }
 
     .quantity-container {
       display: flex;
@@ -74,8 +69,17 @@ body {
         cursor: pointer;
       }
     }
+ 
+    //FÅR INTE ATT FUNKA ?!
+    // .btn-light {
+    //   display: flex;
+    //   justify-content: flex-end;
+    // }
+    // #btn-go-back-to-shoppingcart:link {
+    //   text-decoration: none;
+    //  }
   }
-
+  
   //Footer
   .footer-container {
     display: flex;
