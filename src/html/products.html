@@ -17,7 +17,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../scss/products.scss" />
-    <script src="../ts/products.ts" type="module"></script>
+    <script defer type="module" src="../ts/products.ts" type="module"></script>
   </head>
 
   <body>
@@ -57,10 +57,15 @@
       <h1 id="h1">Våra produkter</h1>
 <!-- Product Category Filter -->
       <div class="buttons">
-        <button type="button" class="button-value" 
-        id="allaProdukter">Alla produkter</button>
+        <button type="button" class="button-value"
+        id="allaProdukter"onclick="filterProduct(allaProdukter)"
+        >Alla produkter</button>
+        
+        
         <button type="button" class="button-value" id="storTallrik">Stor Tallrik</button>
+        
         <button type="button" class="button-value" id="litenTallrik">Liten Tallrik</button>
+        
         <button type="button" class="button-value" id="muggar">Muggar</button>
       </div>
 

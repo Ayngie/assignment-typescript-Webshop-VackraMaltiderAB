@@ -173,20 +173,24 @@ let selectedFilter: string = "";
 
 filterBtnOne.addEventListener("click", () => {
   selectedFilter = "Alla Produkter";
-  console.log("Alla Produkter");
+  console.log("Alla Produkter"); //test
 });
 
 filterBtnTwo.addEventListener("click", () => {
   selectedFilter = "Stor Tallrik";
-  console.log("Stor Tallrik");
+  console.log("Stor Tallrik"); //test
 });
 
 filterBtnThree.addEventListener("click", () => {
   selectedFilter = "Litten Tallrik";
-  console.log("Liten Tallrik");
+  console.log("Liten Tallrik"); //test
 });
 
 filterBtnFour.addEventListener("click", () => {
   selectedFilter = "Muggar";
-  console.log("Muggar");
+  console.log("Muggar"); //test
 });
+
+
+
+  
