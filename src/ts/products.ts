@@ -68,6 +68,16 @@ let products: Product[] = [
     "Viol",
     0
   ),
+  new Product(
+    7,
+    "Bubbles Mugg",
+    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
+    "https://royaldesign.se/bubbles-mugg-30-cl?p=199599",
+    345,
+    "Muggar",
+    "Sand",
+    0
+  ),
 ];
 
 //Filter Products

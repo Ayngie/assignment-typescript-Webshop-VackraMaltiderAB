@@ -157,3 +157,13 @@ function increaseQuantityByOne(product: CartItem) {
   }
   createHtml(productsInCart);
 }
+
+//Betalning
+
+function betala() {
+  confirm("Tack för din beställning!");
+  
+}
+let betalaButton = document.getElementById("btn-betala");
+betalaButton?.addEventListener("click", betala);
+

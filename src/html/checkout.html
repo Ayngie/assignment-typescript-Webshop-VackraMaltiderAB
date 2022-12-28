@@ -71,32 +71,40 @@
 
       <div id="minKassaVarukorg"></div>
       <h6 id="totalSum"></h6>
-      <button type="button" class="btn btn-light">
-        <a id="btn-go-to-checkout" href="../html/checkout.html">Betala</a>
-      </button>
     </article>
 
 <!-- Betalning -->
 <div class="container-payment">
   <h2>Betalning</h2>
   <h3>Dina uppgifter</h3>
+  
   <form action="">
     <label for="name"> Card Holder Name <input type="text" id="card_name"></label>
-    <label for="cardnr"> Card Number <input type="text" name="cardnr" id="cardnr" maxlength="20" onkeypress="cardspace()"></label>
+    <label for="cardnr"> Card Number <input type="text" name="cardnr" id="cardnr" maxlength="19" onkeypress=" "></label>
+    
     <div class="float">
       <label for="validtill"> Valid till <input type="text" name="validtill" id="validtill" maxlength="7" onkeypress="addSlashes()"></label>
       <label for="cvv"> CVV <input type="text" name="cvv" id="cvv" maxlength="3"></label>
     </div>
     
-    <label for="checkbox" id="checkbox"> <input type="checkbox" name="checkbox" id="checkbox"/>
+    <label for="checkbox" id="checkbox">           <input type="checkbox" name="checkbox"   id="checkbox"/>
       <p>Save my card for faster checkout</p>
-      </label>
+    </label>
+    
+    <label for="checkbox" id="checkbox"> <input type="checkbox" name="checkbox" id="checkbox"/>
+      <p>Jag samtycker till att mina personuppgifter hanteras enligt med integritetspolicy</p>
+    </label>
+
+    <div class="container_btn_betala">
+      <button type="button" id="btn-betala">
+        <a id="btn-text">Betala</a>
+      </button>  
+    </div>
+
+    <p id="demo"></p>
       
       
-        <button type="button" id="btn-betala">
-        <a id="btn-text" href="../html/checkout.html">Betala</a>
-      </button>
-      
+        
       
 
   </form>

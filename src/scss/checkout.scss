@@ -146,16 +146,21 @@ body {
     text-transform: none;
   }
 
+  .container_btn_betala {
+    display: flex;
+    justify-content: center;
+  }
+
   #btn-betala {
+    width: 70%;
     border: none;
     background-color: #cccccc;
-    outline: none;
-    text-align: center;
-    width: 80%;
-    height: 40px;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin: 10px;
+    
   }
+
+
+
   #btn-text {
     text-decoration: none;
     color: black;
@@ -201,6 +206,13 @@ body {
   .product-image {
     width: 60%;
   }
+  //Betalning
+  .container-payment {
+    height: 80%;
+    width: 50%;
+  }
+  
+
 
   .footer-container {
     display: flex;
@@ -212,13 +224,7 @@ body {
       font-size: 0.9rem;
     }
   }
-  //Betalning
-  .container-payment {
-    height: 80vh;
-    width: 60vh;
-    background-color: #ededed;
-    
   
-  }
+  
 
 }
