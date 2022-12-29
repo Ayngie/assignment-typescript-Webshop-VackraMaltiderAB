@@ -167,3 +167,4 @@ function betala() {
 let betalaButton = document.getElementById("btn-betala");
 betalaButton?.addEventListener("click", betala);
 
+localStorage.clear()

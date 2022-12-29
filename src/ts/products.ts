@@ -1,6 +1,7 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
+
 // localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
@@ -72,47 +73,13 @@ let products: Product[] = [
     7,
     "Bubbles Mugg",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-    "https://royaldesign.se/bubbles-mugg-30-cl?p=199599",
+    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-42?w=1600&quality=80",
     345,
     "Muggar",
     "Sand",
     0
   ),
 ];
-
-//Filter Products
-
-let filterBtnOne: HTMLInputElement = document.getElementById(
-  "allaProdukter"
-) as HTMLInputElement;
-let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
-let filterBtnThree = document.getElementById(
-  "litenTallrik"
-) as HTMLInputElement;
-let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
-
-let selectedFilter: string = "";
-
-filterBtnOne?.addEventListener("click", () => {
-  selectedFilter = "Alla Produkter";
-  console.log("Alla Produkter"); //test
-});
-
-filterBtnTwo?.addEventListener("click", () => {
-  selectedFilter = "Stor Tallrik";
-  console.log("Stor Tallrik"); //test
-});
-
-filterBtnThree?.addEventListener("click", () => {
-  selectedFilter = "Litten Tallrik";
-  console.log("Liten Tallrik"); //test
-});
-
-filterBtnFour?.addEventListener("click", () => {
-  selectedFilter = "Muggar";
-  console.log("Muggar");
-});
-
 export function createHtml(products: Product[]) {
   let productContainer = document.getElementById("product-container");
 
@@ -171,6 +138,81 @@ export function createHtml(products: Product[]) {
   }
 }
 
+//Filter Products
+
+/*function filter () {
+const buttons = document.querySelectorAll ("button-value");
+const storeItems = document.querySelector ("product-container");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault()
+    const filter = e.target as HTMLButtonElement;
+    filter.classList.add("muggar")
+    console.log (filter.classList);
+  })
+})
+
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let filterBtnOne: HTMLInputElement = document.getElementById(
+  "allaProdukter"
+) as HTMLInputElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
+let filterBtnThree = document.getElementById(
+  "litenTallrik"
+) as HTMLInputElement;
+let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
+
+let selectedFilter: string = "";
+
+
+filterBtnOne?.addEventListener("click", () => {
+  selectedFilter = "Alla Produkter";
+  console.log("Alla Produkter"); //test
+});
+
+filterBtnTwo?.addEventListener("click", () => {
+  selectedFilter = "Stor Tallrik";
+  console.log("Stor Tallrik"); //test
+});
+
+filterBtnThree?.addEventListener("click", () => {
+  selectedFilter = "Litten Tallrik";
+  console.log("Liten Tallrik"); //test
+});
+
+filterBtnFour?.addEventListener("click", () => {
+  selectedFilter = "Muggar";
+  console.log("Muggar");
+});*/
+
+
+
+
 export function addToCart(product: Product) {
   let foundItem: boolean = false;
   let index: number = 0;
@@ -219,3 +261,5 @@ export function addToCart(product: Product) {
 }
 
 createHtml(products);
+
+
