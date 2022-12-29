@@ -155,29 +155,6 @@ buttons.forEach((button) => {
 
 }*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*let filterBtnOne: HTMLInputElement = document.getElementById(
   "allaProdukter"
 ) as HTMLInputElement;
@@ -209,9 +186,6 @@ filterBtnFour?.addEventListener("click", () => {
   selectedFilter = "Muggar";
   console.log("Muggar");
 });*/
-
-
-
 
 export function addToCart(product: Product) {
   let foundItem: boolean = false;
@@ -261,5 +235,3 @@ export function addToCart(product: Product) {
 }
 
 createHtml(products);
-
-

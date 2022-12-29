@@ -4,6 +4,7 @@ body {
   //header and welcome text
   #h1, #welcome-text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
   }
@@ -53,9 +54,6 @@ body {
   .footer-container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: center;
     margin-top: 3%;
 
     position: absolute;
@@ -78,6 +76,11 @@ body {
 
 /*-------------------------------------- Desktop ------------------------------------*/
 @media screen and (min-width: 1000px) {
+  //header and welcome text
+  body #welcome-text {
+    display: flex;
+    flex-direction: row;
+  }
   //image
   #welcome-image img {
     padding-bottom: 10%;
