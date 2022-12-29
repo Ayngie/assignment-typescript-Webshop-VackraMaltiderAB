@@ -9,6 +9,9 @@ body {
 
   .buttons {
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .button-value {
@@ -45,6 +48,7 @@ body {
     .product {
       display: flex;
       flex-direction: column;
+      flex: 100%;
       align-items: center;
       justify-content: center;
       width: 30%;
@@ -83,7 +87,6 @@ body {
   // align-items: center;
   // text-align: center;
   margin-top: 3%;
-
   position: absolute;
   width: 100%;
   background-color: rgb(96, 144, 96);
@@ -110,4 +113,21 @@ body {
       font-size: 0.9rem;
     }
   }
+  .product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+    .product {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 30%;
+      margin-top: 20px;
+      
+    }
+  
 }

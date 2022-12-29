@@ -51,15 +51,18 @@ body {
   } 
 
   //Footer
-  .footer-container {
+  footer {
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // text-align: center;
     margin-top: 3%;
-
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: rgb(96, 144, 96);
-
+    bottom: 0%;
+    
 
     .footer-text {
       margin-top: 1.5%;

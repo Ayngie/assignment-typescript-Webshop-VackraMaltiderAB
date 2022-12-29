@@ -84,10 +84,20 @@ body {
   //Betalning
 
   .container-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-box {
    
     height: 80vh;
     background-color: #eeeeee;
-    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 50px;
+  
     
   
   }
@@ -178,7 +188,7 @@ body {
     // align-items: center;
     // text-align: center;
     margin-top: 3%;
-
+    
     position: absolute;
     width: 100%;
     background-color: rgb(96, 144, 96);
@@ -207,11 +217,17 @@ body {
     width: 60%;
   }
   //Betalning
-  .container-payment {
+  .payment-box {
     height: 80%;
     width: 50%;
+    align-items: center;
   }
   
+  .container-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 
   .footer-container {
