@@ -1,8 +1,7 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
-
-// localStorage.clear();
+//localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
