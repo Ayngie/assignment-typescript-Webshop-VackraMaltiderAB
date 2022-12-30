@@ -1,7 +1,7 @@
 import { Product } from "../ts/models/Product";
 import { CartItem } from "./models/CartItem";
 import { calculateSubtotal, calculateTotal } from "./services/functions";
-//localStorage.clear();
+// localStorage.clear();
 
 window.onload = function () {
   createHtml(productsInCart);
@@ -159,11 +159,13 @@ function increaseQuantityByOne(product: CartItem) {
 }
 
 //Betalning
+let betalaButton = document.getElementById("btn-betala");
+betalaButton?.addEventListener("click", () => {
+  betala();
+  localStorage.clear();
+  createHtml(productsInCart);
+});
 
 function betala() {
   confirm("Tack för din beställning!");
 }
-let betalaButton = document.getElementById("btn-betala");
-betalaButton?.addEventListener("click", betala);
-
-localStorage.clear();

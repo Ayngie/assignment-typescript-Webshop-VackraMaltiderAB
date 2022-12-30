@@ -1,7 +1,7 @@
 import { Product } from "../ts/models/Product";
 import { CartItem } from "./models/CartItem";
 import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
-//localStorage.clear();
+// localStorage.clear();
 
 window.onload = function () {
   createHtml(productsInCart);
