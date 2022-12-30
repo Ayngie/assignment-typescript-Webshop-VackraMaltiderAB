@@ -26,12 +26,6 @@ body {
     border-bottom: 1px solid grey;
   }
 
-  //Total sum
-  #totalSum {
-    float: right;
-    margin-right: 20px;
-  }
-
   //Product rows
   .product-item {
     margin: 1%;
@@ -70,19 +64,19 @@ body {
         cursor: pointer;
       }
     }
- 
-    //FÅR INTE ATT FUNKA ?!
-    // .btn-light {
-    //   display: flex;
-    //   justify-content: flex-end;
-    // }
-    // #btn-go-back-to-shoppingcart:link {
-    //   text-decoration: none;
-    //  }
+
+  }
+
+  //Total sum
+  #min-varukorg {
+    position: relative;
+  }
+  #totalSum {
+    position: absolute;
+    right: 5%;
   }
 
   //Betalning
-
   .container-payment {
     display: flex;
     flex-direction: column;
@@ -90,16 +84,12 @@ body {
   }
 
   .payment-box {
-   
     height: 80vh;
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
     margin-left: 20px;
     margin-top: 50px;
-  
-    
-  
   }
 
   h2 {
@@ -117,7 +107,6 @@ body {
     width: 80%;
     margin-left: 20px;
     justify-content: center;
-    
   }
 
   form #card_name , form #cardnr {
@@ -131,13 +120,11 @@ body {
     font-size: 1em;
     margin: 15px;
     background-color: transparent;
-   
   }
 
   .float {
     display: flex;
     width: 80%;
-  
   }
 
   #validtill , #cvv {
@@ -149,7 +136,6 @@ body {
     margin-bottom: 50px;
     background-color: transparent;
   }
-
 
   p {
     font-size: 1em;
@@ -166,19 +152,13 @@ body {
     border: none;
     background-color: #cccccc;
     margin: 10px;
-    
   }
-
-
 
   #btn-text {
     text-decoration: none;
     color: black;
     font-size: 1.2em;
   }
-  
-
-  
   
   //Footer
   .footer-container {

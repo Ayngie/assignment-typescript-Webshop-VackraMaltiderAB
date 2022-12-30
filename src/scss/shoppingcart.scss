@@ -26,11 +26,6 @@ body {
     border-bottom: 1px solid grey;
   }
 
-  #totalSum {
-    float: right;
-    margin-right: 20px;
-  }
-
   //Product rows
   .product-item {
     margin: 1%;
@@ -53,6 +48,7 @@ body {
       width: 30%;
     }
 
+    //Quantity
     .quantity-container {
       display: flex;
       flex-direction: row;
@@ -78,6 +74,15 @@ body {
     // #btn-go-to-checkout:link {
     //   text-decoration: none;
     //  }
+  }
+  
+  //Total sum
+  #min-varukorg {
+    position: relative;
+  }
+  #totalSum {
+    position: absolute;
+    right: 5%;
   }
 
   //Footer
