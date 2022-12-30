@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     img {
-      width: 60%;
+      width: 80%;
       padding-bottom: 3%;
     }
   }
@@ -87,6 +87,7 @@ body {
 
   //image
   #welcome-image img {
+    width: 60% !important;
     padding-bottom: 10%;
   }
 
