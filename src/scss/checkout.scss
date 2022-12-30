@@ -6,80 +6,79 @@ body {
   .article-content {
     margin-left: 1%;
     margin-right: 1%;
-  }
-  
-  #h1 {
-    display: flex;
-    justify-content: center;
-  }
 
-  //Labels row
-  .labels {
-    margin: 1%;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-      Helvetica, Arial, sans-serif;
-    font-weight: 100;
-
-    border-top: 1px solid grey;
-    padding-top: 1%;
-
-    display: grid;
-    gap: 1em;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-
-    padding-bottom: 1%;
-    border-bottom: 1px solid grey;
-  }
-
-  //Product rows
-  .product-item {
-    margin: 1%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    padding: 1%;
-    border-bottom: 1px solid rgb(206, 206, 206);
-
-    //Product title
-    .product-title {
-      font-size: 1em;
-    }
-
-    //Product image
-    .product-image {
-      width: 30%;
-    }
-
-    .quantity-container {
+    #h1 {
       display: flex;
-      flex-direction: row;
-      gap: 10%;
+      justify-content: center;
+    }
+  
+    //Labels row
+    .labels {
+      margin: 1%;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+      font-weight: 100;
+  
+      border-top: 1px solid grey;
+      padding-top: 1%;
+  
+      display: grid;
+      gap: 1em;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+  
+      padding-bottom: 1%;
+      border-bottom: 1px solid grey;
+    }
+  
+    //Product rows
+    .product-item {
+      margin: 1%;
+      display: grid;
       align-items: center;
-
-      .clickable {
-        border: none;
-        border-radius: 50px;
-        transition-duration: 0.4s;
+      justify-content: center;
+      gap: 1em;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      padding: 1%;
+      border-bottom: 1px solid rgb(206, 206, 206);
+  
+      //Product title
+      .product-title {
+        font-size: 1em;
       }
-      .clickable:hover {
-        background-color: lightgrey;
-        cursor: pointer;
+  
+      //Product image
+      .product-image {
+        width: 30%;
+      }
+  
+      .quantity-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        align-items: center;
+  
+        .clickable {
+          border: none;
+          border-radius: 50px;
+          transition-duration: 0.4s;
+        }
+        .clickable:hover {
+          background-color: lightgrey;
+          cursor: pointer;
+        }
       }
     }
-
-  }
-
-  //Total sum
-  #min-varukorg {
-    position: relative;
-  }
-  #totalSum {
-    position: absolute;
-    right: 5%;
+  
+    //Total sum
+    #min-varukorg {
+      position: relative;
+    }
+    #totalSum {
+      position: absolute;
+      right: 5%;
+    }
   }
 
   //Betalning
