@@ -1,3 +1,5 @@
+/*-------------------------------------- Mobile first ------------------------------------*/
+
 body {
   margin: 0;
   
@@ -164,9 +166,6 @@ body {
   .footer-container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: center;
     margin-top: 3%;
     
     position: absolute;
@@ -186,7 +185,9 @@ body {
 }
 
 /*-------------------------------------- Desktop ------------------------------------*/
+
 @media screen and (min-width: 1000px) {
+  
   //Product title
   .product-title {
     font-size: 1.2em;
@@ -209,7 +210,6 @@ body {
     align-items: center;
   }
 
-
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -220,7 +220,4 @@ body {
       font-size: 0.9rem;
     }
   }
-  
-  
-
 }
