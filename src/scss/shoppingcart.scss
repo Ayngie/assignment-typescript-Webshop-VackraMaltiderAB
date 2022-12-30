@@ -2,7 +2,11 @@
 
 body {
   margin: 0;
-
+  
+  .article-content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
   #h1 {
     display: flex;
     justify-content: center;
