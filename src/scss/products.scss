@@ -67,7 +67,7 @@ body {
 
     .price-btn-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
@@ -107,22 +107,6 @@ body {
 /*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
-  body .product-container {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  body .product {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 30%;
-    margin-top: 20px;
-  }
-
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -146,6 +130,10 @@ body {
       align-items: center;
       width: 30%;
       margin-top: 20px;
+
+      .price-btn-container {
+        flex-direction: row;
+      }
     }
   }
 }
