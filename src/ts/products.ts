@@ -1,6 +1,7 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
+import { Product as filteredList } from "./models/Product";
 
 // localStorage.clear();
 
@@ -9,13 +10,13 @@ let shoppingCart: CartItem[] = JSON.parse(
 );
 
 let products: Product[] = [
-  new Product(
+   new Product(
     1,
     "Stor tallrik Sand",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
     345,
-    "Tallrikar",
+    "Stor tallrik",
     "Sand",
     0
   ),
@@ -25,7 +26,7 @@ let products: Product[] = [
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
     275,
-    "Tallrikar",
+    "Liten tallrik",
     "Cinnamon",
     0
   ),
@@ -35,7 +36,7 @@ let products: Product[] = [
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
     275,
-    "Tallrikar",
+    "Liten tallrik",
     "Sand",
     0
   ),
@@ -45,7 +46,7 @@ let products: Product[] = [
     "En enkel och stilren tallrik tillverkad av keramik.",
     "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
     275,
-    "Tallrikar",
+    "Liten tallrik",
     "Viol",
     0
   ),
@@ -55,7 +56,7 @@ let products: Product[] = [
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
     345,
-    "Tallrikar",
+    "Stor tallrik",
     "Cinnamon",
     0
   ),
@@ -65,23 +66,45 @@ let products: Product[] = [
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
     345,
-    "Tallrikar",
+    "Stor tallrik",
     "Viol",
     0
   ),
   new Product(
     7,
     "Bubbles Mugg",
-    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
+    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
     "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-42?w=1600&quality=80",
     345,
     "Muggar",
     "Sand",
     0
   ),
+  new Product(
+    8,
+    "Bubbles Mugg",
+    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-53?w=1600&quality=80",
+    345,
+    "Muggar",
+    "Viol",
+    0
+  ),
+  new Product(
+    9,
+    "Bubbles Mugg",
+    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-63?w=1600&quality=80",
+    345,
+    "Muggar",
+    "Cinnamon",
+    0
+  ),
 ];
 export function createHtml(products: Product[]) {
   let productContainer = document.getElementById("product-container");
+
+  
 
   for (let i = 0; i < products.length; i++) {
     let product = document.createElement("div");
@@ -136,56 +159,8 @@ export function createHtml(products: Product[]) {
     priceBtnContainer?.appendChild(price);
     priceBtnContainer.appendChild(addToCartBtn);
   }
+  
 }
-
-//Filter Products
-
-/*function filter () {
-const buttons = document.querySelectorAll ("button-value");
-const storeItems = document.querySelector ("product-container");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault()
-    const filter = e.target as HTMLButtonElement;
-    filter.classList.add("muggar")
-    console.log (filter.classList);
-  })
-})
-
-}*/
-
-/*let filterBtnOne: HTMLInputElement = document.getElementById(
-  "allaProdukter"
-) as HTMLInputElement;
-let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
-let filterBtnThree = document.getElementById(
-  "litenTallrik"
-) as HTMLInputElement;
-let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
-
-let selectedFilter: string = "";
-
-
-filterBtnOne?.addEventListener("click", () => {
-  selectedFilter = "Alla Produkter";
-  console.log("Alla Produkter"); //test
-});
-
-filterBtnTwo?.addEventListener("click", () => {
-  selectedFilter = "Stor Tallrik";
-  console.log("Stor Tallrik"); //test
-});
-
-filterBtnThree?.addEventListener("click", () => {
-  selectedFilter = "Litten Tallrik";
-  console.log("Liten Tallrik"); //test
-});
-
-filterBtnFour?.addEventListener("click", () => {
-  selectedFilter = "Muggar";
-  console.log("Muggar");
-});*/
 
 export function addToCart(product: Product) {
   let foundItem: boolean = false;
@@ -232,6 +207,123 @@ export function addToCart(product: Product) {
 
     localStorage.setItem("varukorg", savedCart);
   }
+
 }
 
 createHtml(products);
+
+//Filter Products
+
+  
+let filterBtnOne = document.getElementById("allaProdukter")as HTMLElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
+let filterBtnThree = document.getElementById("litenTallrik") as HTMLInputElement
+let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
+
+//filterBtnOne.innerHTML = "Alla produkter";
+//filterBtnTwo.innerHTML = "Stor tallrik";
+//filterBtnThree.innerHTML = "Liten talrik";
+//filterBtnFour.innerHTML = "Muggar";
+
+let selectedFilter: string = "";
+
+
+filterBtnOne.addEventListener("click", () => {
+  selectedFilter = "Alla produkter";
+  filterAlternatives(products);
+  //console.log(selectedFilter);
+});
+
+filterBtnTwo.addEventListener("click", () => {
+  selectedFilter = "Stor tallrik";
+  filterAlternatives(products);
+  console.log(selectedFilter);
+});
+
+filterBtnThree.addEventListener("click", () => {
+  selectedFilter = "Liten tallrik";
+  filterAlternatives(products);
+  console.log(selectedFilter);
+});
+
+filterBtnFour.addEventListener("click", () => {
+  selectedFilter = "Muggar";
+  filterAlternatives(products);
+  console.log(selectedFilter);
+});
+
+function filterAlternatives(products: Product[]) {
+  let filteredList = products.filter((porslin) => {
+    return porslin.category === selectedFilter;
+  });
+
+  if (selectedFilter === "Alla produkter") {
+    createHtml(products);
+    console.log("All products are able to be seen");
+  } else {
+    showFilteredProducts(filteredList);
+  }
+}
+
+function showFilteredProducts(filteredList: Product[]) {
+  let productContainer = document.getElementById("product-container") as HTMLDivElement;
+
+  productContainer.innerHTML = ""; 
+
+  for(let i = 0; i < filteredList.length; i++) {
+    let product:HTMLDivElement = document.createElement("div");
+    let title:HTMLHeadingElement = document.createElement("h3");
+    let img:HTMLImageElement = document.createElement("img");
+    let description: HTMLParagraphElement = document.createElement("p");
+    let detailContainer:HTMLDivElement = document.createElement("div");
+    let category: HTMLParagraphElement = document.createElement("p");
+    let color: HTMLParagraphElement = document.createElement("p");
+    let priceBtnContainer:HTMLDivElement = document.createElement("div");
+    let price:HTMLHeadingElement = document.createElement("h5");
+    //let addToCartBtn: HTMLButtonElement = document.createElement("button");
+
+
+    detailContainer.appendChild(category);
+    detailContainer.appendChild(color);
+
+    product.className = "product";
+    title.className = "product_title";
+    description.className = "product__description";
+    price.className = "product__price";
+    priceBtnContainer.className = "price-btn-container";
+   // addToCartBtn.className = "add-to-cart-btn";
+    //addToCartBtn.addEventListener("click", () => {
+     // exports.addToCart(products[i]);
+    
+     let addToCartBtn = document.createElement("button");
+     addToCartBtn.id = "addToCartBtn";
+     addToCartBtn.classList.add("add-to-cart-btn");
+     // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
+     addToCartBtn.innerHTML = "Lägg i varukorgen";
+     addToCartBtn.addEventListener("click", () => {
+       exports.addToCart(products[i]);
+     });
+    
+
+    img.src = filteredList [i].imgUrl;
+    img.width = 200;
+    title.innerHTML = filteredList [i].title;
+    description.innerHTML = filteredList [i].description;
+    price.innerHTML += filteredList [i].price;
+    addToCartBtn.innerHTML = "Lägg i varukorgen";
+
+    product.appendChild(img);
+    product.appendChild(title);
+    product.appendChild(description);
+    product.appendChild(price);
+    product.appendChild(priceBtnContainer);
+    priceBtnContainer?.appendChild(price);
+    priceBtnContainer.appendChild(addToCartBtn);
+
+
+    productContainer.appendChild(product);
+
+    
+  }
+  
+}
