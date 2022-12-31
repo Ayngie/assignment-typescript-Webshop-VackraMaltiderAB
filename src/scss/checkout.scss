@@ -1,88 +1,87 @@
+/*-------------------------------------- Mobile first ------------------------------------*/
+
 body {
   margin: 0;
   
+  .article-content {
+    margin-left: 1%;
+    margin-right: 1%;
 
-  #h1 {
-    display: flex;
-    justify-content: center;
-  }
-
-  //Labels row
-  .labels {
-    margin: 1%;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-      Helvetica, Arial, sans-serif;
-    font-weight: 100;
-
-    border-top: 1px solid grey;
-    padding-top: 1%;
-
-    display: grid;
-    gap: 1em;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-
-    padding-bottom: 1%;
-    border-bottom: 1px solid grey;
-  }
-
-  //Total sum
-  #totalSum {
-    float: right;
-    margin-right: 20px;
-  }
-
-  //Product rows
-  .product-item {
-    margin: 1%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    padding: 1%;
-    border-bottom: 1px solid rgb(206, 206, 206);
-
-    //Product title
-    .product-title {
-      font-size: 1em;
-    }
-
-    //Product image
-    .product-image {
-      width: 30%;
-    }
-
-    .quantity-container {
+    #h1 {
       display: flex;
-      flex-direction: row;
-      gap: 10%;
+      justify-content: center;
+    }
+  
+    //Labels row
+    .labels {
+      margin: 1%;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+      font-weight: 100;
+  
+      border-top: 1px solid grey;
+      padding-top: 1%;
+  
+      display: grid;
+      gap: 1em;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+  
+      padding-bottom: 1%;
+      border-bottom: 1px solid grey;
+    }
+  
+    //Product rows
+    .product-item {
+      margin: 1%;
+      display: grid;
       align-items: center;
-
-      .clickable {
-        border: none;
-        border-radius: 50px;
-        transition-duration: 0.4s;
+      justify-content: center;
+      gap: 1em;
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+      padding: 1%;
+      border-bottom: 1px solid rgb(206, 206, 206);
+  
+      //Product title
+      .product-title {
+        font-size: 1em;
       }
-      .clickable:hover {
-        background-color: lightgrey;
-        cursor: pointer;
+  
+      //Product image
+      .product-image {
+        width: 30%;
+      }
+  
+      .quantity-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        align-items: center;
+  
+        .clickable {
+          border: none;
+          border-radius: 50px;
+          transition-duration: 0.4s;
+        }
+        .clickable:hover {
+          background-color: lightgrey;
+          cursor: pointer;
+        }
       }
     }
- 
-    //FÅR INTE ATT FUNKA ?!
-    // .btn-light {
-    //   display: flex;
-    //   justify-content: flex-end;
-    // }
-    // #btn-go-back-to-shoppingcart:link {
-    //   text-decoration: none;
-    //  }
+  
+    //Total sum
+    #min-varukorg {
+      position: relative;
+    }
+    #totalSum {
+      position: absolute;
+      right: 5%;
+    }
   }
 
   //Betalning
-
   .container-payment {
     display: flex;
     flex-direction: column;
@@ -90,25 +89,23 @@ body {
   }
 
   .payment-box {
-   
     height: 80vh;
     background-color: #eeeeee;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    margin-top: 50px;
-  
-    
-  
+    margin: 3%;
+    margin-top: 13%;
   }
 
   h2 {
     padding: 10px 10px;
-    font-size: 30px;
+    font-size: 1.9em;
+    text-align: center;
   }
   h3 {
-    padding: 20px 10px;
+    padding-left: 18px;
   }
+  
   form label {
     color: #5a5a5a;
     position: relative;
@@ -117,7 +114,6 @@ body {
     width: 80%;
     margin-left: 20px;
     justify-content: center;
-    
   }
 
   form #card_name , form #cardnr {
@@ -131,13 +127,11 @@ body {
     font-size: 1em;
     margin: 15px;
     background-color: transparent;
-   
   }
 
   .float {
     display: flex;
     width: 80%;
-  
   }
 
   #validtill , #cvv {
@@ -149,7 +143,6 @@ body {
     margin-bottom: 50px;
     background-color: transparent;
   }
-
 
   p {
     font-size: 1em;
@@ -166,10 +159,7 @@ body {
     border: none;
     background-color: #cccccc;
     margin: 10px;
-    
   }
-
-
 
   #btn-text {
     text-decoration: none;
@@ -177,16 +167,10 @@ body {
     font-size: 1.2em;
   }
   
-
-  
-  
   //Footer
   .footer-container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: center;
     margin-top: 3%;
     
     position: absolute;
@@ -206,7 +190,9 @@ body {
 }
 
 /*-------------------------------------- Desktop ------------------------------------*/
+
 @media screen and (min-width: 1000px) {
+  
   //Product title
   .product-title {
     font-size: 1.2em;
@@ -223,12 +209,16 @@ body {
     align-items: center;
   }
   
+  //Betalning
   .container-payment {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
+    .payment-box {
+      margin-top: 4%;
+    }
+  }
 
   .footer-container {
     display: flex;
@@ -240,7 +230,4 @@ body {
       font-size: 0.9rem;
     }
   }
-  
-  
-
 }

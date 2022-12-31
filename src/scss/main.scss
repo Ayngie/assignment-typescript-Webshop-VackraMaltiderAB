@@ -1,3 +1,5 @@
+/*-------------------------------------- Mobile first ------------------------------------*/
+
 body {
   margin: 0;
 
@@ -14,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     img {
-      width: 60%;
+      width: 80%;
       padding-bottom: 3%;
     }
   }
@@ -54,9 +56,6 @@ body {
   footer {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: center;
     margin-top: 3%;
     position: fixed;
     width: 100%;
@@ -76,16 +75,19 @@ body {
   }
 }
 
-
 /*-------------------------------------- Desktop ------------------------------------*/
+
 @media screen and (min-width: 1000px) {
+  
   //header and welcome text
   body #welcome-text {
     display: flex;
     flex-direction: row;
   }
+
   //image
   #welcome-image img {
+    width: 60% !important;
     padding-bottom: 10%;
   }
 

@@ -1,82 +1,88 @@
+/*-------------------------------------- Mobile first ------------------------------------*/
+
 body {
   margin: 0;
-}
-//header and contact text
-//header and welcome text
 
-#contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5%;
-
-  #contact-info {
+  //Header and contact info
+  #contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    width: 80%;
-    border: 1px solid rgb(209, 209, 209);
-    padding: 1%;
+    margin-bottom: 5%;
 
-    .contact-text {
+    #contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       width: 80%;
-      font-size: larger;
-      margin-bottom: 1%;
-    }
+      border: 1px solid rgb(209, 209, 209);
+      padding: 1%;
 
-    #contact-nr,
-    #contact-email {
-      font-weight: bold;
-      font-size: large;
-    }
-
-    .links {
-      color: rgb(7, 117, 7);
-      padding-left: 7px;
-      padding-right: 7px;
-      background-color: rgb(235, 245, 233);
-      border-radius: 15px;
-      margin-left: 3px;
-      margin-right: 3px;
-
-      &:hover {
-        cursor: pointer;
-        color: rgb(128, 218, 128);
+      .contact-text {
+        width: 80%;
+        font-size: larger;
+        margin-bottom: 5%;
       }
-      &:link {
-        text-decoration: none;
+
+      #contact-nr,
+      #contact-email {
+        font-weight: bold;
+        font-size: large;
+      }
+
+      .links {
+        color: rgb(7, 117, 7);
+        padding-left: 7px;
+        padding-right: 7px;
+        background-color: rgb(235, 245, 233);
+        border-radius: 15px;
+        margin-left: 3px;
+        margin-right: 3px;
+
+        &:hover {
+          cursor: pointer;
+          color: rgb(128, 218, 128);
+        }
+        &:link {
+          text-decoration: none;
+        }
       }
     }
   }
-}
 
-//Footer
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // text-align: center;
-  margin-top: 3%;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  background-color: rgb(96, 144, 96);
+  //Footer
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
 
-  .footer-text {
-    margin-top: 1.5%;
+    position: absolute;
     width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 0.8rem;
-    text-align: center;
-    line-height: normal;
+    background-color: rgb(96, 144, 96);
+
+    .footer-text {
+      margin-top: 1.5%;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      font-size: 0.8rem;
+      text-align: center;
+      line-height: normal;
+    }
   }
 }
+
+/*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
+  
+  //Header and contact info
+  .contact-text {
+    margin-bottom: 2% !important;
+  }
+
+  //Footer
   .footer-container {
     display: flex;
     flex-direction: row;

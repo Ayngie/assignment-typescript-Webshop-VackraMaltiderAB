@@ -1,8 +1,11 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
+<<<<<<< HEAD
 import { Product as filteredList } from "./models/Product";
 
+=======
+>>>>>>> f76187b75af35be698565178067f03654c4fd51e
 // localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
