@@ -7,6 +7,8 @@ window.onload = function () {
   createHtml(productsInCart);
 };
 
+let emptyList: CartItem[] = [];
+
 //hämta kundens lista av produkter från localstorage.
 let productsInCart: CartItem[] = JSON.parse(
   localStorage.getItem("varukorg") || "[]"
@@ -163,7 +165,7 @@ let betalaButton = document.getElementById("btn-betala");
 betalaButton?.addEventListener("click", () => {
   betala();
   localStorage.clear();
-  createHtml(productsInCart);
+  createHtml(emptyList);
 });
 
 function betala() {
