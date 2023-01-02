@@ -1,11 +1,8 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
-<<<<<<< HEAD
 import { Product as filteredList } from "./models/Product";
 
-=======
->>>>>>> f76187b75af35be698565178067f03654c4fd51e
 // localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
@@ -13,7 +10,7 @@ let shoppingCart: CartItem[] = JSON.parse(
 );
 
 let products: Product[] = [
-   new Product(
+  new Product(
     1,
     "Stor tallrik Sand",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
@@ -105,9 +102,9 @@ let products: Product[] = [
   ),
 ];
 export function createHtml(products: Product[]) {
-  let productContainer = document.getElementById("product-container");
-
-  
+  let productContainer = document.getElementById(
+    "product-container"
+  ) as HTMLDivElement;
 
   for (let i = 0; i < products.length; i++) {
     let product = document.createElement("div");
@@ -162,7 +159,6 @@ export function createHtml(products: Product[]) {
     priceBtnContainer?.appendChild(price);
     priceBtnContainer.appendChild(addToCartBtn);
   }
-  
 }
 
 export function addToCart(product: Product) {
@@ -210,18 +206,20 @@ export function addToCart(product: Product) {
 
     localStorage.setItem("varukorg", savedCart);
   }
-
 }
 
 createHtml(products);
 
 //Filter Products
 
-  
-let filterBtnOne = document.getElementById("allaProdukter")as HTMLElement;
-let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
-let filterBtnThree = document.getElementById("litenTallrik") as HTMLInputElement
-let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
+let filterBtnOne = document.getElementById(
+  "allaProdukter"
+) as HTMLButtonElement;
+let filterBtnTwo = document.getElementById("storTallrik") as HTMLButtonElement;
+let filterBtnThree = document.getElementById(
+  "litenTallrik"
+) as HTMLButtonElement;
+let filterBtnFour = document.getElementById("muggar") as HTMLButtonElement;
 
 //filterBtnOne.innerHTML = "Alla produkter";
 //filterBtnTwo.innerHTML = "Stor tallrik";
@@ -229,7 +227,6 @@ let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
 //filterBtnFour.innerHTML = "Muggar";
 
 let selectedFilter: string = "";
-
 
 filterBtnOne.addEventListener("click", () => {
   selectedFilter = "Alla produkter";
@@ -269,22 +266,23 @@ function filterAlternatives(products: Product[]) {
 }
 
 function showFilteredProducts(filteredList: Product[]) {
-  let productContainer = document.getElementById("product-container") as HTMLDivElement;
+  let productContainer = document.getElementById(
+    "product-container"
+  ) as HTMLDivElement;
 
-  productContainer.innerHTML = ""; 
+  productContainer.innerHTML = "";
 
-  for(let i = 0; i < filteredList.length; i++) {
-    let product:HTMLDivElement = document.createElement("div");
-    let title:HTMLHeadingElement = document.createElement("h3");
-    let img:HTMLImageElement = document.createElement("img");
+  for (let i = 0; i < filteredList.length; i++) {
+    let product: HTMLDivElement = document.createElement("div");
+    let title: HTMLHeadingElement = document.createElement("h3");
+    let img: HTMLImageElement = document.createElement("img");
     let description: HTMLParagraphElement = document.createElement("p");
-    let detailContainer:HTMLDivElement = document.createElement("div");
+    let detailContainer: HTMLDivElement = document.createElement("div");
     let category: HTMLParagraphElement = document.createElement("p");
     let color: HTMLParagraphElement = document.createElement("p");
-    let priceBtnContainer:HTMLDivElement = document.createElement("div");
-    let price:HTMLHeadingElement = document.createElement("h5");
+    let priceBtnContainer: HTMLDivElement = document.createElement("div");
+    let price: HTMLHeadingElement = document.createElement("h5");
     //let addToCartBtn: HTMLButtonElement = document.createElement("button");
-
 
     detailContainer.appendChild(category);
     detailContainer.appendChild(color);
@@ -294,25 +292,24 @@ function showFilteredProducts(filteredList: Product[]) {
     description.className = "product__description";
     price.className = "product__price";
     priceBtnContainer.className = "price-btn-container";
-   // addToCartBtn.className = "add-to-cart-btn";
+    // addToCartBtn.className = "add-to-cart-btn";
     //addToCartBtn.addEventListener("click", () => {
-     // exports.addToCart(products[i]);
-    
-     let addToCartBtn = document.createElement("button");
-     addToCartBtn.id = "addToCartBtn";
-     addToCartBtn.classList.add("add-to-cart-btn");
-     // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
-     addToCartBtn.innerHTML = "Lägg i varukorgen";
-     addToCartBtn.addEventListener("click", () => {
-       exports.addToCart(products[i]);
-     });
-    
+    // exports.addToCart(products[i]);
 
-    img.src = filteredList [i].imgUrl;
+    let addToCartBtn = document.createElement("button");
+    addToCartBtn.id = "addToCartBtn";
+    addToCartBtn.classList.add("add-to-cart-btn");
+    // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
+    addToCartBtn.innerHTML = "Lägg i varukorgen";
+    addToCartBtn.addEventListener("click", () => {
+      exports.addToCart(products[i]);
+    });
+
+    img.src = filteredList[i].imgUrl;
     img.width = 200;
-    title.innerHTML = filteredList [i].title;
-    description.innerHTML = filteredList [i].description;
-    price.innerHTML += filteredList [i].price;
+    title.innerHTML = filteredList[i].title;
+    description.innerHTML = filteredList[i].description;
+    price.innerHTML += filteredList[i].price;
     addToCartBtn.innerHTML = "Lägg i varukorgen";
 
     product.appendChild(img);
@@ -323,10 +320,6 @@ function showFilteredProducts(filteredList: Product[]) {
     priceBtnContainer?.appendChild(price);
     priceBtnContainer.appendChild(addToCartBtn);
 
-
     productContainer.appendChild(product);
-
-    
   }
-  
 }
