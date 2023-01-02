@@ -10,6 +10,11 @@ body {
     align-items: center;
     margin-bottom: 5%;
 
+    #h1 {
+      padding-top: 5%;
+      padding-bottom: 3%;
+    }
+
     #contact-info {
       display: flex;
       flex-direction: column;
