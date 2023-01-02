@@ -1,11 +1,7 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
-<<<<<<< HEAD
-=======
-import { Product as filteredList } from "./models/Product";
 
->>>>>>> 3d63a17d1c89930e0278a1f252e1bd84a2a06faf
 // localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
@@ -105,17 +101,11 @@ let products: Product[] = [
   ),
 ];
 export function createHtml(products: Product[]) {
-<<<<<<< HEAD
   let productContainer: HTMLDivElement = document.getElementById(
     "product-container"
   ) as HTMLDivElement;
 
   productContainer.innerHTML = "";
-=======
-  let productContainer = document.getElementById(
-    "product-container"
-  ) as HTMLDivElement;
->>>>>>> 3d63a17d1c89930e0278a1f252e1bd84a2a06faf
 
   for (let i = 0; i < products.length; i++) {
     let product = document.createElement("div");
@@ -223,14 +213,6 @@ createHtml(products);
 
 //Filter Products
 
-<<<<<<< HEAD
-let filterBtnOne = document.getElementById("allaProdukter") as HTMLElement;
-let filterBtnTwo = document.getElementById("storTallrik") as HTMLInputElement;
-let filterBtnThree = document.getElementById(
-  "litenTallrik"
-) as HTMLInputElement;
-let filterBtnFour = document.getElementById("muggar") as HTMLInputElement;
-=======
 let filterBtnOne = document.getElementById(
   "allaProdukter"
 ) as HTMLButtonElement;
@@ -239,7 +221,6 @@ let filterBtnThree = document.getElementById(
   "litenTallrik"
 ) as HTMLButtonElement;
 let filterBtnFour = document.getElementById("muggar") as HTMLButtonElement;
->>>>>>> 3d63a17d1c89930e0278a1f252e1bd84a2a06faf
 
 //filterBtnOne.innerHTML = "Alla produkter";
 //filterBtnTwo.innerHTML = "Stor tallrik";
