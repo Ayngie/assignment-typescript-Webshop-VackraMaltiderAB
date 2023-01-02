@@ -71,7 +71,7 @@ let products: Product[] = [
   ),
   new Product(
     7,
-    "Bubbles Mugg",
+    "Bubbles Mugg Sand",
     "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
     "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-42?w=1600&quality=80",
     345,
@@ -81,7 +81,7 @@ let products: Product[] = [
   ),
   new Product(
     8,
-    "Bubbles Mugg",
+    "Bubbles Mugg Viol",
     "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
     "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-53?w=1600&quality=80",
     345,
@@ -91,7 +91,7 @@ let products: Product[] = [
   ),
   new Product(
     9,
-    "Bubbles Mugg",
+    "Bubbles Mugg Cinnamon",
     "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
     "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-63?w=1600&quality=80",
     345,
@@ -264,64 +264,5 @@ function filterAlternatives(products: Product[]) {
     console.log("All products are able to be seen");
   } else {
     createHtml(filteredList);
-  }
-}
-
-function showFilteredProducts(filteredList: Product[]) {
-  let productContainer = document.getElementById(
-    "product-container"
-  ) as HTMLDivElement;
-
-  productContainer.innerHTML = "";
-
-  for (let i = 0; i < filteredList.length; i++) {
-    let product: HTMLDivElement = document.createElement("div");
-    let title: HTMLHeadingElement = document.createElement("h3");
-    let img: HTMLImageElement = document.createElement("img");
-    let description: HTMLParagraphElement = document.createElement("p");
-    let detailContainer: HTMLDivElement = document.createElement("div");
-    let category: HTMLParagraphElement = document.createElement("p");
-    let color: HTMLParagraphElement = document.createElement("p");
-    let priceBtnContainer: HTMLDivElement = document.createElement("div");
-    let price: HTMLHeadingElement = document.createElement("h5");
-    //let addToCartBtn: HTMLButtonElement = document.createElement("button");
-
-    detailContainer.appendChild(category);
-    detailContainer.appendChild(color);
-
-    product.className = "product";
-    title.className = "product_title";
-    description.className = "product__description";
-    price.className = "product__price";
-    priceBtnContainer.className = "price-btn-container";
-    // addToCartBtn.className = "add-to-cart-btn";
-    //addToCartBtn.addEventListener("click", () => {
-    // exports.addToCart(products[i]);
-
-    let addToCartBtn = document.createElement("button");
-    addToCartBtn.id = "addToCartBtn";
-    addToCartBtn.classList.add("add-to-cart-btn");
-    // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
-    addToCartBtn.innerHTML = "Lägg i varukorgen";
-    addToCartBtn.addEventListener("click", () => {
-      exports.addToCart(products[i]);
-    });
-
-    img.src = filteredList[i].imgUrl;
-    img.width = 200;
-    title.innerHTML = filteredList[i].title;
-    description.innerHTML = filteredList[i].description;
-    price.innerHTML += filteredList[i].price;
-    addToCartBtn.innerHTML = "Lägg i varukorgen";
-
-    product.appendChild(img);
-    product.appendChild(title);
-    product.appendChild(description);
-    product.appendChild(price);
-    product.appendChild(priceBtnContainer);
-    priceBtnContainer?.appendChild(price);
-    priceBtnContainer.appendChild(addToCartBtn);
-
-    productContainer.appendChild(product);
   }
 }
