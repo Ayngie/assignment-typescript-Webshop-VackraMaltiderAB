@@ -7,6 +7,12 @@ body {
     margin-left: 1%;
     margin-right: 1%;
 
+    #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
+      :link {
+        text-decoration: none !important;
+      }
+    }
+    
     #h1 {
       display: flex;
       justify-content: center;
@@ -207,6 +213,7 @@ body {
     height: 80%;
     width: 50%;
     align-items: center;
+    position: relative;
   }
   
   //Betalning
