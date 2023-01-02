@@ -32,9 +32,6 @@ const createHtml = (productsInCart: CartItem[]) => {
   labelsContainer.classList.add("labels");
   titleLabel.classList.add("product-title");
   imageLabel.classList.add("product-image");
-  priceLabel.classList.add("product-price"); //klass för senare styling
-  quantityLabel.classList.add("product-quantity"); //klass för senare styling
-  subTotalLabel.classList.add("product-line-price"); //klass för senare styling
 
   titleLabel.innerHTML = "Produktnamn";
   imageLabel.innerHTML = "Bild";
@@ -66,14 +63,9 @@ const createHtml = (productsInCart: CartItem[]) => {
     productItem.classList.add("product-item");
     title.classList.add("product-title");
     img.classList.add("product-image");
-    price.classList.add("product-price"); //klass för senare styling
-    quantityContainer.classList.add("quantity-container"); //klass för senare styling
-    quantity.classList.add("product-quantity"); //klass för senare styling
-    addOne.classList.add("add-one"); //klass för senare styling
-    addOne.classList.add("clickable"); //klass för senare styling
-    subtractOne.classList.add("subtract-one"); //klass för senare styling
-    subtractOne.classList.add("clickable"); //klass för senare styling
-    productLinePrice.classList.add("product-line-price"); //klass för senare styling
+    quantityContainer.classList.add("quantity-container");
+    addOne.classList.add("clickable");
+    subtractOne.classList.add("clickable");
 
     title.innerHTML = productsInCart[i].product.title;
     img.src = productsInCart[i].product.imgUrl;
