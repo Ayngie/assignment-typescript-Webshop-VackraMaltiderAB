@@ -6,16 +6,12 @@ body {
   .article-content {
     margin-left: 1%;
     margin-right: 1%;
-    #btn-container {
-      position: relative;
-      padding: 1%;  
-      #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
-        :link {
-          text-decoration: none !important;
-        }
+
+    #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
+      :link {
+        text-decoration: none !important;
       }
     }
-
     
     #h1 {
       display: flex;
@@ -126,16 +122,17 @@ body {
     justify-content: center;
   }
 
-  form #card_name , form #cardnr {
-    width: 100%;
-    outline: none;
+  .container-input{
+    margin-left: 10px;
+  }
+
+   #card_name , #cardnr {
     border: none;
     border-bottom: 1px solid white;
-    text-transform: capitalize;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    font-size: 1em;
-    margin: 15px;
+    outline: none;
+    width: 80%;
+    padding-top: 15px;
+    margin-bottom: 50px;
     background-color: transparent;
   }
 

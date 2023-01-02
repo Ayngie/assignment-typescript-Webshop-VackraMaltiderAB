@@ -21,36 +21,6 @@ let products: Product[] = [
   ),
   new Product(
     2,
-    "Liten tallrik Cinnamon",
-    "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
-    275,
-    "Liten tallrik",
-    "Cinnamon",
-    0
-  ),
-  new Product(
-    3,
-    "Liten tallrik Sand",
-    "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
-    275,
-    "Liten tallrik",
-    "Sand",
-    0
-  ),
-  new Product(
-    4,
-    "Liten tallrik Viol",
-    "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
-    275,
-    "Liten tallrik",
-    "Viol",
-    0
-  ),
-  new Product(
-    5,
     "Stor tallrik Cinnamon",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
@@ -60,12 +30,42 @@ let products: Product[] = [
     0
   ),
   new Product(
-    6,
+    3,
     "Stor tallrik Viol",
     "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
     "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
     345,
     "Stor tallrik",
+    "Viol",
+    0
+  ),
+  new Product(
+    4,
+    "Liten tallrik Sand",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
+    275,
+    "Liten tallrik",
+    "Sand",
+    0
+  ),
+  new Product(
+    5,
+    "Liten tallrik Cinnamon",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
+    275,
+    "Liten tallrik",
+    "Cinnamon",
+    0
+  ),
+  new Product(
+    6,
+    "Liten tallrik Viol",
+    "En enkel och stilren tallrik tillverkad av keramik.",
+    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
+    275,
+    "Liten tallrik",
     "Viol",
     0
   ),
@@ -81,22 +81,22 @@ let products: Product[] = [
   ),
   new Product(
     8,
-    "Bubbles Mugg Viol",
-    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
-    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-53?w=1600&quality=80",
-    345,
-    "Muggar",
-    "Viol",
-    0
-  ),
-  new Product(
-    9,
     "Bubbles Mugg Cinnamon",
     "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
     "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-63?w=1600&quality=80",
     345,
     "Muggar",
     "Cinnamon",
+    0
+  ),
+  new Product(
+    9,
+    "Bubbles Mugg Viol",
+    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-53?w=1600&quality=80",
+    345,
+    "Muggar",
+    "Viol",
     0
   ),
 ];
@@ -223,17 +223,13 @@ let filterBtnThree = document.getElementById(
 ) as HTMLButtonElement;
 let filterBtnFour = document.getElementById("muggar") as HTMLButtonElement;
 
-//filterBtnOne.innerHTML = "Alla produkter";
-//filterBtnTwo.innerHTML = "Stor tallrik";
-//filterBtnThree.innerHTML = "Liten talrik";
-//filterBtnFour.innerHTML = "Muggar";
 
 let selectedFilter: string = "";
 
 filterBtnOne.addEventListener("click", () => {
   selectedFilter = "Alla produkter";
   filterAlternatives(products);
-  //console.log(selectedFilter);
+  
 });
 
 filterBtnTwo.addEventListener("click", () => {
