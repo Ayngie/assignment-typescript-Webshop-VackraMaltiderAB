@@ -4,6 +4,12 @@ body {
   margin: 0;
 
   //header and welcome text
+
+  #h1 {
+    padding-top: 5%;
+    padding-bottom: 3%;
+  }
+
   #h1, #welcome-text {
     display: flex;
     flex-direction: column;

@@ -12,6 +12,17 @@ body {
         text-decoration: none !important;
       }
     }
+    #btn-container {
+      position: relative;
+      padding: 1%;  
+      padding-bottom: 3%;
+      #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
+        :link {
+          text-decoration: none !important;
+        }
+      }
+    }
+
     
     #h1 {
       display: flex;
@@ -199,7 +210,11 @@ body {
 /*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
-  
+  //Buttons container
+  #btn-container {
+    padding-bottom: 1% !important;
+  }
+
   //Product title
   .product-title {
     font-size: 1.2em;
