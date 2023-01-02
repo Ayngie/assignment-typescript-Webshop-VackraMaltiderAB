@@ -9,6 +9,7 @@ body {
     #btn-container {
       position: relative;
       padding: 1%;  
+      padding-bottom: 3%;
       #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
         :link {
           text-decoration: none !important;
@@ -202,7 +203,11 @@ body {
 /*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
-  
+  //Buttons container
+  #btn-container {
+    padding-bottom: 1% !important;
+  }
+
   //Product title
   .product-title {
     font-size: 1.2em;

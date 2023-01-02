@@ -7,17 +7,24 @@ body {
     margin-left: 1%;
     margin-right: 1%;
 
-    .btn-containers {
+    .btn-container1 {
       position: relative;
       padding: 1%;
+      padding-bottom: 3%;
       #btn-go-back-to-products {
         :link {
           text-decoration: none;
         }
       }
+    }
+    .btn-container2 {
+      position: relative;
+      padding: 1%;
+      padding-bottom: 17%;
       #btn-go-to-checkout {
         position: absolute;
         right: 0;
+        bottom: 0;
         :link {
           text-decoration: none;
         }
@@ -125,6 +132,14 @@ body {
 /*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
+  //btn containers
+  .btn-container1 {
+    padding-bottom: 1% !important;
+  }
+  .btn-container2 {
+      padding-bottom: 5% !important;
+  }
+  
   //Product title
   .product-title {
     font-size: 1.2em;
