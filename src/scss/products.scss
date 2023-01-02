@@ -58,6 +58,11 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
 
+    .description-pTag {
+      width: 60vw;
+      text-align: center;
+    }
+
     .product {
       display: flex;
       flex-direction: column;
@@ -132,6 +137,9 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
 
+    .description-pTag {
+      width: auto !important;
+    }
     .product {
       display: flex;
       flex-direction: column;
