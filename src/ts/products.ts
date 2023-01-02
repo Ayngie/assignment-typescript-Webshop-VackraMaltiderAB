@@ -100,6 +100,7 @@ let products: Product[] = [
     0
   ),
 ];
+
 export function createHtml(products: Product[]) {
   let productContainer: HTMLDivElement = document.getElementById(
     "product-container"
@@ -262,7 +263,7 @@ function filterAlternatives(products: Product[]) {
     createHtml(products);
     console.log("All products are able to be seen");
   } else {
-    showFilteredProducts(filteredList);
+    createHtml(filteredList);
   }
 }
 
