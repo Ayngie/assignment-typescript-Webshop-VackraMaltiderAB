@@ -35,8 +35,9 @@ body {
     #h1 {
       display: flex;
       justify-content: center;
+      padding-top: 5%;
+      padding-bottom: 3%;
     }
-  
     //Labels row
     .labels {
       margin: 1%;
@@ -139,7 +140,7 @@ body {
   .btn-container2 {
       padding-bottom: 5% !important;
   }
-  
+
   //Product title
   .product-title {
     font-size: 1.2em;
