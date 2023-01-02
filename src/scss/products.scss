@@ -3,8 +3,12 @@
 body {
   margin: 0;
 
-  #article-content {
+  #btn-container {
+    position: relative;
+    padding: 1%;
     #btn-go-to-shoppingcart {
+      position: absolute;
+      right: 1%;
       :link {
         text-decoration: none;
       }

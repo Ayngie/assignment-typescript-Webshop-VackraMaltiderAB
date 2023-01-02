@@ -6,20 +6,24 @@ body {
   .article-content {
     margin-left: 1%;
     margin-right: 1%;
-    position: relative;
 
-    #btn-go-back-to-products {
-      :link {
-        text-decoration: none;
+    .btn-containers {
+      position: relative;
+      padding: 1%;
+      #btn-go-back-to-products {
+        :link {
+          text-decoration: none;
+        }
+      }
+      #btn-go-to-checkout {
+        position: absolute;
+        right: 0;
+        :link {
+          text-decoration: none;
+        }
       }
     }
-    #btn-go-to-checkout {
-      position: absolute;
-      right: 0;
-      :link {
-        text-decoration: none;
-      }
-    }
+
 
     #h1 {
       display: flex;
