@@ -123,6 +123,7 @@ export function createHtml(products: Product[]) {
 
     let description = document.createElement("p");
     description.innerHTML = products[i].description;
+    description.classList.add("description-pTag");
 
     let detailContainer = document.createElement("div");
     detailContainer.id = "detail-container";
