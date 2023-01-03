@@ -151,6 +151,13 @@ function increaseQuantityByOne(product: CartItem) {
   createHtml(productsInCart);
 }
 
+//Rensa listan
+let clearBtn = document.getElementById("clear-btn");
+clearBtn?.addEventListener("click", () => {
+  localStorage.clear();
+  createHtml(emptyList);
+});
+
 //Betalning
 let betalaButton = document.getElementById("btn-betala");
 betalaButton?.addEventListener("click", () => {

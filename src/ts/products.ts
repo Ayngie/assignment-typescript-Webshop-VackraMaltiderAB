@@ -169,7 +169,7 @@ export function addToCart(product: Product) {
   if (shoppingCart.length > 0) {
     //om listan är större än noll.
     for (let i = 0; i < shoppingCart.length; i++) {
-      if (product === shoppingCart[i].product) {
+      if (product.productId === shoppingCart[i].product.productId) {
         foundItem = true;
         index = shoppingCart.indexOf(shoppingCart[i]);
         quantity = shoppingCart[i].quantity;
