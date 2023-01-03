@@ -43,6 +43,9 @@ body {
     &:link {
       text-decoration: none;
     }
+    &:active {
+      color: rgb(235, 245, 233);
+    }
 
     animation: blink-animation 1s steps (5, start) ease;
     -webkit-animation: blink-animation 2.2s steps(5, start) infinite;

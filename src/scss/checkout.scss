@@ -7,17 +7,14 @@ body {
     margin-left: 1%;
     margin-right: 1%;
 
-    #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
-      :link {
-        text-decoration: none !important;
-      }
-      a {
-        color:  rgb(96, 144, 96);
-      }
+    #h1 {
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+      padding-bottom: 3%;
     }
-    #clear-btn {
-      color:  rgb(96, 144, 96);
-    }
+
+    //Buttons
     #btn-container {
       position: relative;
       padding: 1%;  
@@ -26,15 +23,34 @@ body {
         :link {
           text-decoration: none !important;
         }
+        a {
+          color: rgb(96, 144, 96);
+
+          &:active {
+            color: rgb(235, 245, 233);
+          }
+        }
+        &:hover {
+          background-color: rgb(157, 191, 157);
+        }
       }
     }
 
-    
-    #h1 {
-      display: flex;
-      justify-content: center;
-      padding-top: 5%;
-      padding-bottom: 3%;
+    #btn-go-back-to-shoppingcart, #btn-go-back-to-products {
+      background-color: rgb(235, 245, 233);
+
+      :link {
+        text-decoration: none !important;
+      }
+      a {
+        color:  rgb(96, 144, 96);
+      }
+    }
+
+    #clear-btn {
+      color:  rgb(96, 144, 96);
+      background-color: rgb(235, 245, 233);
+
     }
     
     //Labels row

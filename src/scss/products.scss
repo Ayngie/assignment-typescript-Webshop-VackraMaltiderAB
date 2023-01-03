@@ -6,26 +6,37 @@ body {
   article {
     margin-bottom: 12%;
 
-    #btn-container {
-      position: relative;
-      padding: 1%;
-      #btn-go-to-shoppingcart {
-        position: absolute;
-        right: 1%;
-        :link {
-          text-decoration: none;
-        }
-        a {
-          color: rgb(96, 144, 96);
-        }
-      }
-    }
-    
     #h1 {
       padding-top: 5%;
       padding-bottom: 3%;
       display: flex;
       justify-content: center;
+    }
+
+    //Buttons
+    #btn-container {
+      position: relative;
+      padding: 1%;
+      margin-top: 3%;
+
+      #btn-go-to-shoppingcart {
+        position: absolute;
+        right: 1%;
+        background-color: rgb(235, 245, 233);
+        :link {
+          text-decoration: none;
+        }
+        a {
+          color: rgb(96, 144, 96);
+
+          &:active {
+            color: rgb(235, 245, 233);
+          }
+        }
+        &:hover {
+          background-color: rgb(157, 191, 157);
+        }
+      }
     }
 
     .buttons {
@@ -98,14 +109,19 @@ body {
 
         .add-to-cart-btn {
           &:hover {
-            background-color: lightgray;
+            background-color: rgb(157, 191, 157);
+          }
+          color: rgb(96, 144, 96);
+          border-radius: 5%;
+          border: none;
+          background-color: rgb(235, 245, 233);
+          padding: 5px;
+
+          &:active {
+            color: rgb(235, 245, 233);
           }
         }
       }
-    }
-
-    #btn-container {
-      margin-top: 3%;
     }
   }
 }

@@ -33,18 +33,26 @@ body {
     }
 
     #btn-go-back-to-products, #btn-go-to-checkout {
-        :link {
-          text-decoration: none;
-        }
-        a {
-          color:  rgb(96, 144, 96);
-        }
-      }      
+      background-color: rgb(235, 245, 233);
+      :link {
+        text-decoration: none;
+      }
+      a {
+        color:  rgb(96, 144, 96);
+        &:active {
+          color: rgb(235, 245, 233);
+        }  
+      }
+      &:hover {
+        background-color: rgb(157, 191, 157);
+      }
+    }      
 
     #clear-btn-container {
       padding: 1%;  
       #clear-btn {
         color:  rgb(96, 144, 96);
+        background-color: rgb(235, 245, 233);
       }
     }
 
