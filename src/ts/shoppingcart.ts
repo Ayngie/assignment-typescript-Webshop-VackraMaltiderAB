@@ -5,6 +5,8 @@ import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 window.onload = function () {
   createHtml(productsInCart);
 };
+//tom lista för användning vid rensning
+let emptyList: CartItem[] = [];
 
 //hämta kundens lista av produkter från localstorage.
 let productsInCart: CartItem[] = JSON.parse(
@@ -139,3 +141,10 @@ function increaseQuantityByOne(product: CartItem) {
 
   createHtml(productsInCart);
 }
+
+//Rensa listan
+let clearBtn = document.getElementById("clear-btn");
+clearBtn?.addEventListener("click", () => {
+  localStorage.clear();
+  createHtml(emptyList);
+});

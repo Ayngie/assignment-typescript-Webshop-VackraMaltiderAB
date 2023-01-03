@@ -7,17 +7,21 @@ body {
     margin-left: 1%;
     margin-right: 1%;
 
-    .btn-container1 {
+    #h1 {
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+      padding-bottom: 3%;
+    }
+    
+    //Buttons
+    .goBack-btn-container {
       position: relative;
       padding: 1%;
       padding-bottom: 3%;
-      #btn-go-back-to-products {
-        :link {
-          text-decoration: none;
-        }
-      }
     }
-    .btn-container2 {
+
+    .checkout-btn-container {
       position: relative;
       padding: 1%;
       padding-bottom: 17%;
@@ -25,19 +29,25 @@ body {
         position: absolute;
         right: 0;
         bottom: 0;
-        :link {
-          text-decoration: none;
-        }
       }
     }
 
+    #btn-go-back-to-products, #btn-go-to-checkout {
+        :link {
+          text-decoration: none;
+        }
+        a {
+          color:  rgb(96, 144, 96);
+        }
+      }      
 
-    #h1 {
-      display: flex;
-      justify-content: center;
-      padding-top: 5%;
-      padding-bottom: 3%;
+    #clear-btn-container {
+      padding: 1%;  
+      #clear-btn {
+        color:  rgb(96, 144, 96);
+      }
     }
+
     //Labels row
     .labels {
       margin: 1%;
@@ -133,10 +143,10 @@ body {
 
 @media screen and (min-width: 1000px) {
   //btn containers
-  .btn-container1 {
+  .goBack-btn-container {
     padding-bottom: 1% !important;
   }
-  .btn-container2 {
+  .checkout-btn-container {
       padding-bottom: 5% !important;
   }
 
