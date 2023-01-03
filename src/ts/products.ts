@@ -1,7 +1,6 @@
 import { iteratee } from "cypress/types/lodash";
 import { CartItem } from "./models/CartItem";
 import { Product } from "./models/Product";
-
 // localStorage.clear();
 
 let shoppingCart: CartItem[] = JSON.parse(
@@ -147,7 +146,6 @@ export function createHtml(products: Product[]) {
     let addToCartBtn = document.createElement("button");
     addToCartBtn.id = "addToCartBtn";
     addToCartBtn.classList.add("add-to-cart-btn");
-    // addToCartBtn.classList.add("btn btn-light"); //bootstrap klass
     addToCartBtn.innerHTML = "Lägg i varukorgen";
     addToCartBtn.addEventListener("click", () => {
       exports.addToCart(products[i]);
@@ -169,6 +167,7 @@ export function addToCart(product: Product) {
   let index: number = 0;
   let quantity: number = 0;
   if (shoppingCart.length > 0) {
+    //om listan är större än noll.
     for (let i = 0; i < shoppingCart.length; i++) {
       if (product === shoppingCart[i].product) {
         foundItem = true;
@@ -177,6 +176,7 @@ export function addToCart(product: Product) {
       }
     }
     if (foundItem) {
+      //om produkten fanns i listan.
       shoppingCart.splice(index, 1);
       quantity++;
 
@@ -188,6 +188,7 @@ export function addToCart(product: Product) {
 
       localStorage.setItem("varukorg", savedCart);
     } else {
+      //om produkten inte fanns i listan.
       let quantity = 0;
       quantity++;
       let productToCart: CartItem = new CartItem(product, quantity);
@@ -199,6 +200,7 @@ export function addToCart(product: Product) {
       localStorage.setItem("varukorg", savedCart);
     }
   } else {
+    //om listan var tom.
     let quantity = 0;
     quantity++;
     let productToCart: CartItem = new CartItem(product, quantity);
@@ -224,13 +226,11 @@ let filterBtnThree = document.getElementById(
 ) as HTMLButtonElement;
 let filterBtnFour = document.getElementById("muggar") as HTMLButtonElement;
 
-
 let selectedFilter: string = "";
 
 filterBtnOne.addEventListener("click", () => {
   selectedFilter = "Alla produkter";
   filterAlternatives(products);
-  
 });
 
 filterBtnTwo.addEventListener("click", () => {
