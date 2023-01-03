@@ -103,13 +103,13 @@ const createHtml = (productsInCart: CartItem[]) => {
     productItem.appendChild(productLinePrice);
 
     container.appendChild(productItem);
-
-    let totalText: HTMLHeadingElement = document.getElementById(
-      "totalSum"
-    ) as HTMLHeadingElement;
-    let total = calculateTotal(productsInCart).toString();
-    totalText.innerHTML = "Totalbelopp " + total + " kr";
   }
+  //Total sum
+  let totalText: HTMLHeadingElement = document.getElementById(
+    "totalSum"
+  ) as HTMLHeadingElement;
+  let total = calculateTotal(productsInCart).toString();
+  totalText.innerHTML = "Totalbelopp " + total + " kr";
 };
 
 function decreaseQuantityByOne(product: CartItem) {
