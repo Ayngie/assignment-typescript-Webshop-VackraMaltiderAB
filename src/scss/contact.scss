@@ -61,8 +61,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 3%;
-
-    position: absolute;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     background-color: rgb(96, 144, 96);
 
