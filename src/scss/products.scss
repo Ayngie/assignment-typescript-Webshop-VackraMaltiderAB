@@ -13,7 +13,7 @@ body {
       justify-content: center;
     }
 
-    //Buttons
+    //Button (Go to shoppingcart)
     #btn-container {
       position: relative;
       padding: 1%;
@@ -39,6 +39,7 @@ body {
       }
     }
 
+    //Filter Buttons
     .buttons {
       margin-top: 40px;
       display: flex;
@@ -70,6 +71,7 @@ body {
       transition: all 0.2 ease-in-out;
     }
 
+    //Products
     .product-container {
       display: flex;
       flex-direction: column;
@@ -85,7 +87,6 @@ body {
       .product {
         display: flex;
         flex-direction: column;
-        //flex: 100%;
         align-items: center;
         justify-content: center;
         width: 30%;
@@ -153,7 +154,8 @@ body {
   article {
 
     margin-bottom: 2% !important;
-
+    
+    //Products
     .product-container {
       display: flex;
       flex-direction: row !important;
@@ -178,11 +180,13 @@ body {
       }
     }
 
+    //Button (Go to shoppingcart)
     #btn-container {
       margin-top: 1% !important;
     }
   }
 
+  //Footer
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -190,7 +194,6 @@ body {
     .footer-text {
       display: flex;
       flex-direction: row;
-      font-size: 0.9rem;
     }
   }
 }

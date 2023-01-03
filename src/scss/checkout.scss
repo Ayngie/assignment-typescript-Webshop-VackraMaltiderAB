@@ -243,7 +243,7 @@ body {
 
 @media screen and (min-width: 1000px) {
   
-  //Buttons container
+  //Buttons
   #btn-container {
     padding-bottom: 1% !important;
   }
@@ -265,7 +265,6 @@ body {
     align-items: center;
 
     .payment-box {
-      // height: 80%;
       width: 50%;
       align-items: center;
       position: relative;
@@ -281,7 +280,6 @@ body {
     .footer-text {
       display: flex;
       flex-direction: row;
-      font-size: 0.9rem;
     }
   }
 }

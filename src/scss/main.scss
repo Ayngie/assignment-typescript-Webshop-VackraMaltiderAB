@@ -3,8 +3,7 @@
 body {
   margin: 0;
 
-  //header and welcome text
-
+  //Header and Welcome text
   #h1 {
     padding-top: 5%;
     padding-bottom: 3%;
@@ -17,17 +16,8 @@ body {
     text-align: center;
   }
 
-  //image
-  #welcome-image-container {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 80%;
-      padding-bottom: 3%;
-    }
-  }
-
-  #produkter {  
+  //Welcome text
+  #text-link {  
     color: green;
     padding-left: 7px;
     padding-right: 7px;
@@ -47,6 +37,7 @@ body {
       color: rgb(235, 245, 233);
     }
 
+    //Text animation
     animation: blink-animation 1s steps (5, start) ease;
     -webkit-animation: blink-animation 2.2s steps(5, start) infinite;
     @keyframes blink-animation {
@@ -60,6 +51,16 @@ body {
       }
     }
   } 
+
+  //image
+  #welcome-image-container {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 80%;
+      padding-bottom: 3%;
+    }
+  }
 
   //Footer
   footer {
@@ -87,7 +88,7 @@ body {
 
 @media screen and (min-width: 1000px) {
   
-  //header and welcome text
+  //Header and Welcome text
   body #welcome-text {
     display: flex;
     flex-direction: row;
@@ -101,7 +102,7 @@ body {
     margin-top: 30px;
   }
 
-  //footer
+  //Footer
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -110,8 +111,6 @@ body {
     .footer-text {
       display: flex;
       flex-direction: row;
-      font-size: 0.9rem;
-
     }
   }  
 }
