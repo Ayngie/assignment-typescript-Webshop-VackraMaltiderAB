@@ -106,86 +106,87 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .payment-box {
-    height: 80vh;
-    background-color: #eeeeee;
-    display: flex;
-    flex-direction: column;
-    margin: 3%;
-    margin-top: 13%;
-  }
+    .payment-box {
+      height: 80vh;
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      margin: 3%;
+      margin-top: 13%;
 
-  h2 {
-    padding: 10px 10px;
-    font-size: 1.9em;
-    text-align: center;
-  }
-  h3 {
-    padding-left: 18px;
-  }
-  
-  form label {
-    color: #5a5a5a;
-    position: relative;
-    font-size: 1em;
-    word-spacing: 2px;
-    width: 80%;
-    margin-left: 20px;
-    justify-content: center;
-  }
+      h2 {
+        padding: 10px 10px;
+        font-size: 1.9em;
+        text-align: center;
+      }
 
-  .container-input{
-    margin-left: 10px;
-  }
+      h3 {
+        padding-left: 18px;
+      }
 
-   #card_name , #cardnr {
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    width: 80%;
-    padding-top: 15px;
-    margin-bottom: 50px;
-    background-color: transparent;
-  }
+      .container-input{
+        margin-left: 10px;
 
-  .float {
-    display: flex;
-    width: 80%;
-  }
+        p {
+          font-size: 1em;
+          text-transform: none;
+        }
 
-  #validtill , #cvv {
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    width: 130px;
-    padding-top: 15px;
-    margin-bottom: 50px;
-    background-color: transparent;
-  }
+        form label {
+          color: #5a5a5a;
+          position: relative;
+          font-size: 1em;
+          word-spacing: 2px;
+          width: 80%;
+          margin-left: 20px;
+          justify-content: center;
+        }
 
-  p {
-    font-size: 1em;
-    text-transform: none;
-  }
+        #card_name , #cardnr {
+          border: none;
+          border-bottom: 1px solid white;
+          outline: none;
+          width: 80%;
+          padding-top: 15px;
+          margin-bottom: 50px;
+          background-color: transparent;
+        }
 
-  .container_btn_betala {
-    display: flex;
-    justify-content: center;
-  }
+        .float {
+          display: flex;
+          width: 80%;
 
-  #btn-betala {
-    width: 70%;
-    border: none;
-    background-color: #cccccc;
-    margin: 10px;
-  }
+          #validtill , #cvv {
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            width: 130px;
+            padding-top: 15px;
+            margin-bottom: 50px;
+            background-color: transparent;
+          }
+        }
 
-  #btn-text {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2em;
+        .container_btn_betala {
+          display: flex;
+          justify-content: center;
+
+          #btn-betala {
+            width: 70%;
+            border: none;
+            background-color: #cccccc;
+            margin: 10px;
+
+            #btn-text {
+              text-decoration: none;
+              color: black;
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    }
   }
   
   //Footer
@@ -213,6 +214,7 @@ body {
 /*-------------------------------------- Desktop ------------------------------------*/
 
 @media screen and (min-width: 1000px) {
+  
   //Buttons container
   #btn-container {
     padding-bottom: 1% !important;
@@ -227,14 +229,7 @@ body {
   .product-image {
     width: 60%;
   }
-  //Betalning
-  .payment-box {
-    height: 80%;
-    width: 50%;
-    align-items: center;
-    position: relative;
-  }
-  
+
   //Betalning
   .container-payment {
     display: flex;
@@ -242,10 +237,15 @@ body {
     align-items: center;
 
     .payment-box {
+      // height: 80%;
+      width: 50%;
+      align-items: center;
+      position: relative;
       margin-top: 4%;
     }
   }
 
+  //Footer
   .footer-container {
     display: flex;
     flex-direction: row;
