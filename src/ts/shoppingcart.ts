@@ -147,4 +147,5 @@ let clearBtn = document.getElementById("clear-btn");
 clearBtn?.addEventListener("click", () => {
   localStorage.clear();
   createHtml(emptyList);
+  
 });
