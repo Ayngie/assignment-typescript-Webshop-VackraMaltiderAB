@@ -9,23 +9,25 @@ import { calculateSubtotal, calculateTotal } from "../ts/services/functions";
 
 let product: Product = new Product(
   1,
-  "Stor tallrik Sand",
-  "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-  "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
+  "Stor tallrik Vit",
+  "Denna tallrik kommer från serien Happy som även innehåller fat, muggar och mycket mer.",
+  "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+  "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
   345,
   "Tallrikar",
-  "Sand",
+  "Vit",
   0
 );
 
 let productTwo: Product = new Product(
   2,
-  "Liten tallrik Cinnamon",
+  "Liten tallrik Kanel",
   "En enkel och stilren tallrik tillverkad av keramik.",
-  "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
+  "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+  "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
   275,
   "Tallrikar",
-  "Cinnamon",
+  "Kanel",
   0
 );
 

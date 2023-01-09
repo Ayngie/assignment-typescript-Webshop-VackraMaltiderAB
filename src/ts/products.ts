@@ -10,29 +10,32 @@ let shoppingCart: CartItem[] = JSON.parse(
 let products: Product[] = [
   new Product(
     1,
-    "Stor tallrik Sand",
-    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-32",
+    "Stor tallrik Vit",
+    "Denna tallrik kommer från serien Happy som även innehåller fat, muggar och mycket mer.",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     345,
     "Stor tallrik",
-    "Sand",
+    "Vit",
     0
   ),
   new Product(
     2,
-    "Stor tallrik Cinnamon",
-    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-47?w=1080&quality=80",
+    "Stor tallrik Kanel",
+    "Denna tallrik kommer från serien Happy som även innehåller fat, muggar och mycket mer.",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     345,
     "Stor tallrik",
-    "Cinnamon",
+    "Kanel",
     0
   ),
   new Product(
     3,
     "Stor tallrik Viol",
-    "Denna tallrik kommer från serien Bubbles som även innehåller fat, muggar och mycket mer.",
-    "https://royaldesign.se/image/1/mateus-bubbles-tallrik-28-cm-39?w=1080&quality=80",
+    "Denna tallrik kommer från serien Happy som även innehåller fat, muggar och mycket mer.",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     345,
     "Stor tallrik",
     "Viol",
@@ -40,29 +43,32 @@ let products: Product[] = [
   ),
   new Product(
     4,
-    "Liten tallrik Sand",
+    "Liten tallrik Vit",
     "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-33?w=1080&quality=80",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     275,
     "Liten tallrik",
-    "Sand",
+    "Vit",
     0
   ),
   new Product(
     5,
-    "Liten tallrik Cinnamon",
+    "Liten tallrik Kanel",
     "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-50?w=1080&quality=80",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     275,
     "Liten tallrik",
-    "Cinnamon",
+    "Kanel",
     0
   ),
   new Product(
     6,
     "Liten tallrik Viol",
     "En enkel och stilren tallrik tillverkad av keramik.",
-    "https://royaldesign.se/image/1/mateus-basic-tallrik-25-cm-42?w=1080&quality=80",
+    "https://images.unsplash.com/photo-1587334207810-4915c4e40c67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "High-quality photo of a pea pod on a white background, image from Mockup Graphics on unSplash.com",
     275,
     "Liten tallrik",
     "Viol",
@@ -70,29 +76,32 @@ let products: Product[] = [
   ),
   new Product(
     7,
-    "Bubbles Mugg Sand",
-    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
-    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-42?w=1600&quality=80",
+    "Happy Mugg Vit",
+    "Den här muggen är i sin enkelhet både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://images.unsplash.com/photo-1587411768065-fd9b9dd13359?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "Porcelain cup, image from Mockup Graphics on unSplash.com",
     345,
     "Muggar",
-    "Sand",
+    "Vit",
     0
   ),
   new Product(
     8,
-    "Bubbles Mugg Cinnamon",
-    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
-    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-63?w=1600&quality=80",
+    "Happy Mugg Kanel",
+    "Den här muggen är i sin enkelhet både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://images.unsplash.com/photo-1587411768065-fd9b9dd13359?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "Porcelain cup, image from Mockup Graphics on unSplash.com",
     345,
     "Muggar",
-    "Cinnamon",
+    "Kanel",
     0
   ),
   new Product(
     9,
-    "Bubbles Mugg Viol",
-    "Den här muggen har ett bubbligt mönster som gör den både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
-    "https://royaldesign.se/image/1/mateus-bubbles-mugg-30-cl-53?w=1600&quality=80",
+    "Happy Mugg Viol",
+    "Den här muggen är i sin enkelhet både charmig och lätt att hålla i handen. Den är tillverkad av keramik och målad för hand vilket gör att varje mugg unik.",
+    "https://images.unsplash.com/photo-1587411768065-fd9b9dd13359?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80",
+    "Porcelain cup, image from Mockup Graphics on unSplash.com",
     345,
     "Muggar",
     "Viol",
@@ -117,7 +126,7 @@ export function createHtml(products: Product[]) {
 
     let image = document.createElement("img");
     image.src = products[i].imgUrl;
-    image.alt = products[i].title;
+    image.alt = products[i].imgAlt;
     image.width = 200;
 
     let description = document.createElement("p");
