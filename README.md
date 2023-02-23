@@ -1,3 +1,7 @@
+Changed repo-name due to existing actual company with old project name for the fictitious webshop.
+
+---
+
 # webshop9
 Grupparbete Medieinstitutet FED22S - med Wilma, Barbora och Angelica
 
