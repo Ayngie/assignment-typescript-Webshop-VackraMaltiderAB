@@ -1,12 +1,15 @@
-OBS! Changed repo-name due to existing actual company with old project name for the fictitious webshop.
+# Group assignment - building a webshop
+
+## Short description 
+This project was a group assignment, at Medieinstitutet Sthlm. I built the fictitious webshop together with Wilma Wiker and Barbra Miklosovikova.
+Tha aim of the assignment was to build a webshop with Typescript & Sass.
+
+NB! Changed repo-name due to existing actual company with old project name for the fictitious webshop.
 
 ---
 
-# webshop9
-Grupparbete Medieinstitutet FED22S - med Wilma, Barbora och Angelica
-
-# INFO FRÅN SEBASTIAN:
-## Webshop
+## INFO FRÅN SEBASTIAN:
+### Webshop
 
 Ni skall skapa en webshop!! Hurra :)
 
@@ -55,12 +58,14 @@ Stort lycka till!
 Mvh
 Sebastian
 
-# INFO FRÅN LINDA:
-## Gruppuppgift
+---
 
-### Utvärdera G-nivå
-#### Somgrupp/teamskani:
-##### 1.Planera ert projekt
+## INFO FRÅN LINDA:
+### Gruppuppgift
+
+#### Utvärdera G-nivå
+##### Som grupp/team ska ni:
+###### 1.Planera ert projekt
   a.Ska ett visuellt dokument. Så att ni har en bild av vad projektet innebär
   b.Skapa ett gemensamt projekt på jira & bjud in Linda
   c.Genom att bryta ned kravspecen så att vi får en överblick & en förståelse för
@@ -74,7 +79,7 @@ Sebastian
     - När ska ni har era daily standup?
     - Hur ser er gemensam arkitektur & struktur ut?
 
-##### 2.Starta upp projektet
+###### 2.Starta upp projektet
   a.Börja med en refinement & gör scrum poker (estimering) på de user storier
     som har högst prioritering (värdet skriver ni in storyn. Alt använder er av jiras
       userpoints)
@@ -83,7 +88,7 @@ Sebastian
   d.Starta sprinten & börja arbeta utifrån er plan (viktigt att ni hela tiden
     uppdaterar i jira hur ni arbetar)
   
- ##### 3.Varje sprint avslutas
+###### 3.Varje sprint avslutas
   a.Med en demo
   b.Retrospective
   c.Även den sista sprinten ska avslutas med en retro. Då gör ni en retro för hela
@@ -92,4 +97,3 @@ Sebastian
   **Datum** **Demo**
   ●**29/12** Demo i grupp tillsammans med Linda
   ●**5/1** Slutdemo, hela projeketet visas inför klassen & läraren1
-# Webshop
