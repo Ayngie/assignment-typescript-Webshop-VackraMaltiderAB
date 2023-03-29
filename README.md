@@ -21,7 +21,7 @@ NB! Changed repo-name due to existing actual company with old project name for t
 ---
 
 ## Screen dump of project:
-![Vackra måltider](https://angelicareutersward.se/assets/vackraMaltider/vackraMaltider.png)
+![Vackra måltider](https://angelicareutersward.se/assets/vackraMaltider/VackraMaltider.png)
 
 ---
 
