@@ -1,10 +1,14 @@
 # Group assignment - building a webshop
 
 ## Short description 
-This project was a group assignment, at Medieinstitutet Sthlm. I built the fictitious webshop together with Wilma Wiker and Barbra Miklosovikova.
-Tha aim of the assignment was to build a webshop with Typescript & Sass.
+This project was an agile group assignment, at Medieinstitutet Sthlm. I built the fictitious webshop together with Wilma Wiker and Barbra Miklosovikova.
+Tha aim of the assignment was to build a webshop with Typescript & Sass. 
+
+We used SCRUM & Jira for this agile project. 
 
 NB! Changed repo-name due to existing actual company with old project name for the fictitious webshop.
+
+---
 
 ## Techniques used (shields/badges)
 ![Git badge](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white/to/img.png) 
